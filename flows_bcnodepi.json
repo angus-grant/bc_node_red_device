@@ -1592,7 +1592,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 200,
+        "x": 220,
         "y": 120,
         "wires": [
             [
@@ -1608,7 +1608,7 @@
         "readingtype": "17",
         "readingvalue": "payload",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 120,
         "wires": [
             []
@@ -1633,7 +1633,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 210,
+        "x": 230,
         "y": 180,
         "wires": [
             [
@@ -1649,7 +1649,7 @@
         "readingtype": "13",
         "readingvalue": "payload",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 180,
         "wires": [
             []
@@ -1674,7 +1674,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 190,
+        "x": 210,
         "y": 240,
         "wires": [
             [
@@ -1690,7 +1690,7 @@
         "readingtype": "15",
         "readingvalue": "payload",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 240,
         "wires": [
             []
@@ -1715,7 +1715,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 190,
+        "x": 210,
         "y": 300,
         "wires": [
             [
@@ -1731,7 +1731,7 @@
         "readingtype": "16",
         "readingvalue": "",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 300,
         "wires": [
             []
@@ -1756,7 +1756,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 190,
+        "x": 210,
         "y": 360,
         "wires": [
             [
@@ -1772,7 +1772,7 @@
         "readingtype": "18",
         "readingvalue": "payload",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 360,
         "wires": [
             []
@@ -1797,7 +1797,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 210,
+        "x": 230,
         "y": 420,
         "wires": [
             [
@@ -1813,7 +1813,7 @@
         "readingtype": "19",
         "readingvalue": "payload",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 420,
         "wires": [
             []
@@ -1838,7 +1838,7 @@
         "payloadType": "num",
         "topic": "topic",
         "topicType": "msg",
-        "x": 200,
+        "x": 220,
         "y": 480,
         "wires": [
             [
@@ -1854,7 +1854,7 @@
         "readingtype": "14",
         "readingvalue": "",
         "readingvaluetype": "msg",
-        "x": 440,
+        "x": 460,
         "y": 480,
         "wires": [
             []
@@ -1876,7 +1876,7 @@
         "delay": 300,
         "topic": "topic",
         "topicType": "msg",
-        "x": 230,
+        "x": 250,
         "y": 60,
         "wires": [
             [
@@ -1903,7 +1903,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 460,
+        "x": 480,
         "y": 60,
         "wires": [
             []
