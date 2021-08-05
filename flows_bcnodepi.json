@@ -414,8 +414,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 410,
-        "y": 180,
+        "x": 350,
+        "y": 200,
         "wires": [
             [
                 "84777860.d9efc8"
@@ -433,8 +433,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 590,
-        "y": 180,
+        "x": 600,
+        "y": 200,
         "wires": [
             [
                 "b12b2b5d.4dcb08"
@@ -460,7 +460,7 @@
         "topic": "",
         "topicType": "str",
         "x": 770,
-        "y": 180,
+        "y": 200,
         "wires": [
             [
                 "db518bdc.403338"
@@ -486,8 +486,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1000,
-        "y": 180,
+        "x": 990,
+        "y": 200,
         "wires": [
             []
         ]
@@ -577,7 +577,6 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
         "payloadType": "str",
         "x": 790,
         "y": 160,
@@ -868,11 +867,12 @@
         "links": [
             "800fdbd5.b33ce8"
         ],
-        "x": 695,
+        "x": 715,
         "y": 280,
         "wires": [
             [
-                "453fb9a4.a63dd8"
+                "453fb9a4.a63dd8",
+                "c13a8bbc.4eba08"
             ]
         ]
     },
@@ -922,8 +922,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 980,
-        "y": 320,
+        "x": 1000,
+        "y": 280,
         "wires": [
             []
         ]
@@ -948,6 +948,7 @@
         "id": "8eb49577.a9ed78",
         "type": "inject",
         "z": "e3c08c05.3866c",
+        "d": true,
         "name": "",
         "props": [
             {
@@ -973,6 +974,7 @@
         "id": "d07f8d2b.dc21c",
         "type": "function",
         "z": "e3c08c05.3866c",
+        "d": true,
         "name": "",
         "func": "msg.payload = global.get('fermentname', 'storeInFile');\n\nreturn msg;",
         "outputs": 1,
@@ -1014,7 +1016,7 @@
         "offcolor": "",
         "animate": false,
         "x": 690,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
                 "713e947d.74620c"
@@ -1041,7 +1043,7 @@
         "to": "",
         "reg": false,
         "x": 930,
-        "y": 380,
+        "y": 360,
         "wires": [
             []
         ]
@@ -1129,7 +1131,7 @@
         "type": "brewers-chronicle-post",
         "z": "88b059e6.3f9688",
         "name": "BC Post => target",
-        "readingtype": "3",
+        "readingtype": "6",
         "readingvalue": "#:(storeInFile)::targetTemp",
         "readingvaluetype": "global",
         "x": 650,
@@ -1258,7 +1260,7 @@
         "type": "switch",
         "z": "88b059e6.3f9688",
         "name": "BC sync active?",
-        "property": "syncTargettoBC",
+        "property": "#:(storeInFile)::syncTargettoBC",
         "propertyType": "global",
         "rules": [
             {
@@ -1356,7 +1358,7 @@
         "type": "brewers-chronicle-post",
         "z": "88b059e6.3f9688",
         "name": "BC Post => temp",
-        "readingtype": "4",
+        "readingtype": "7",
         "readingvalue": "temp",
         "readingvaluetype": "global",
         "x": 610,
@@ -1508,7 +1510,7 @@
             "3eb30ec7.923ee2"
         ],
         "x": 675,
-        "y": 100,
+        "y": 120,
         "wires": [
             [
                 "cb1d6a04.a1c6a8"
@@ -1569,7 +1571,8 @@
         "y": 460,
         "wires": [
             [
-                "b3e612abf3ab315f"
+                "b3e612abf3ab315f",
+                "b3afe966ff8dac64"
             ]
         ]
     },
@@ -2172,7 +2175,8 @@
                 "d6fba3e2.d4af8",
                 "503033.b04e9fcc",
                 "9b2327ae.5648f8",
-                "54fee94f.561958"
+                "54fee94f.561958",
+                "bc584d97ac632cc9"
             ]
         ]
     },
@@ -2578,6 +2582,127 @@
         "wires": [
             [
                 "01a338fa6cddc570"
+            ]
+        ]
+    },
+    {
+        "id": "bc584d97ac632cc9",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.selected_batch_id",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::selected_batch_id",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "6d4a563a74dc5339"
+            ]
+        ]
+    },
+    {
+        "id": "6d4a563a74dc5339",
+        "type": "ui_text_input",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "log id",
+        "tooltip": "",
+        "group": "b9da51c7.1f01",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 590,
+        "y": 140,
+        "wires": [
+            [
+                "b3281423f17531eb"
+            ]
+        ]
+    },
+    {
+        "id": "b3281423f17531eb",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::selected_batch_id",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 880,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1fbf1a0bb83ebd9d",
+        "type": "ui_toast",
+        "z": "88b059e6.3f9688",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 310,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b3afe966ff8dac64",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "trying to get fermentInfo",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 400,
+        "wires": [
+            [
+                "1fbf1a0bb83ebd9d"
             ]
         ]
     }
