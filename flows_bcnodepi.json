@@ -1,0 +1,2584 @@
+[
+    {
+        "id": "531a9bf4.bad494",
+        "type": "tab",
+        "label": "Sample",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "e3c08c05.3866c",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "432a76d2.855fe8",
+        "type": "tab",
+        "label": "Settings",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "88b059e6.3f9688",
+        "type": "tab",
+        "label": "Brewers Chronicle",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d5dbdbd2.269aa8",
+        "type": "tab",
+        "label": "BC Testing flow",
+        "disabled": true,
+        "info": ""
+    },
+    {
+        "id": "e180919e.705d3",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "10788b43.59cf15",
+        "type": "ui_group",
+        "name": "Dashboard",
+        "tab": "970798f9.ff53c8",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "970798f9.ff53c8",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ae52acd2.d4a07",
+        "type": "ui_tab",
+        "name": "Settings",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b9da51c7.1f01",
+        "type": "ui_group",
+        "name": "Settings",
+        "tab": "ae52acd2.d4a07",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1a3824a0.4dd3fb",
+        "type": "ui_tab",
+        "name": "Dashboard",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "35f318e2.949be8",
+        "type": "ui_spacer",
+        "z": "e3c08c05.3866c",
+        "name": "spacer",
+        "group": "10788b43.59cf15",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "6bef699e.30ee88",
+        "type": "ui_tab",
+        "name": "BC Testing",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8e4748f9.2a2398",
+        "type": "ui_group",
+        "name": "BC test group",
+        "tab": "6bef699e.30ee88",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "53695c22.da6614",
+        "type": "http request",
+        "z": "531a9bf4.bad494",
+        "name": "get sensors",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/sensors/1wire/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "a4a8c70a.498658"
+            ]
+        ]
+    },
+    {
+        "id": "a4a8c70a.498658",
+        "type": "function",
+        "z": "531a9bf4.bad494",
+        "name": "",
+        "func": "\nvar listArray = [];\n\nmsg.options = msg.payload;\nmsg.payload = global.get('temp_sensorid');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 120,
+        "wires": [
+            [
+                "c3f032f9.2146c"
+            ]
+        ]
+    },
+    {
+        "id": "c3f032f9.2146c",
+        "type": "ui_dropdown",
+        "z": "531a9bf4.bad494",
+        "name": "temp sensor",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "10788b43.59cf15",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "x": 760,
+        "y": 120,
+        "wires": [
+            [
+                "1cebd71d.7e4829"
+            ]
+        ]
+    },
+    {
+        "id": "64b1d95c.229e58",
+        "type": "sensor-dynamic-ds18b20",
+        "z": "531a9bf4.bad494",
+        "name": "temp",
+        "topic": "",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "cd85f616.a65b38"
+            ]
+        ]
+    },
+    {
+        "id": "cd85f616.a65b38",
+        "type": "debug",
+        "z": "531a9bf4.bad494",
+        "name": "DS18B20 output",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "ba4fa5ac.454938",
+        "type": "function",
+        "z": "531a9bf4.bad494",
+        "name": "",
+        "func": "\nvar listArray = [];\n\nmsg.sensorid = global.get('temp_sensorid');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 220,
+        "wires": [
+            [
+                "64b1d95c.229e58"
+            ]
+        ]
+    },
+    {
+        "id": "1cebd71d.7e4829",
+        "type": "change",
+        "z": "531a9bf4.bad494",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp_sensorid",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8b835913.b816e8",
+        "type": "inject",
+        "z": "531a9bf4.bad494",
+        "name": "",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 160,
+        "y": 220,
+        "wires": [
+            [
+                "ba4fa5ac.454938"
+            ]
+        ]
+    },
+    {
+        "id": "ca27b8f9.6b1628",
+        "type": "inject",
+        "z": "531a9bf4.bad494",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 480,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "593fc5ab.a86aec",
+        "type": "ui_ui_control",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "events": "all",
+        "x": 300,
+        "y": 680,
+        "wires": [
+            [
+                "6e9d70dd.c266f"
+            ]
+        ]
+    },
+    {
+        "id": "9b2327ae.5648f8",
+        "type": "http request",
+        "z": "432a76d2.855fe8",
+        "name": "get sensors",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:1880/sensors/1wire/",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "84777860.d9efc8"
+            ]
+        ]
+    },
+    {
+        "id": "84777860.d9efc8",
+        "type": "function",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "func": "msg.options = msg.payload;\nmsg.payload = global.get('temp_sensorid', 'storeInFile');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "b12b2b5d.4dcb08"
+            ]
+        ]
+    },
+    {
+        "id": "b12b2b5d.4dcb08",
+        "type": "ui_dropdown",
+        "z": "432a76d2.855fe8",
+        "name": "temp sensor",
+        "label": "Sensor id",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "b9da51c7.1f01",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [],
+        "payload": "",
+        "topic": "",
+        "topicType": "str",
+        "x": 770,
+        "y": 180,
+        "wires": [
+            [
+                "db518bdc.403338"
+            ]
+        ]
+    },
+    {
+        "id": "db518bdc.403338",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::temp_sensorid",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1000,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4bab58e5.1439b8",
+        "type": "sensor-dynamic-ds18b20",
+        "z": "e3c08c05.3866c",
+        "name": "temp",
+        "topic": "",
+        "x": 630,
+        "y": 200,
+        "wires": [
+            [
+                "c94ab7ea.550f58"
+            ]
+        ]
+    },
+    {
+        "id": "6bf6f55f.cbc8fc",
+        "type": "ui_text",
+        "z": "e3c08c05.3866c",
+        "group": "10788b43.59cf15",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Current temp",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1050,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "dc0594a8.4d8ae8",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "func": "\nvar listArray = [];\n\nmsg.sensorid = global.get('temp_sensorid', 'storeInFile');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 200,
+        "wires": [
+            [
+                "4bab58e5.1439b8"
+            ]
+        ]
+    },
+    {
+        "id": "8323670.986ec98",
+        "type": "inject",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "9a559936.c69ab8",
+                "d07f8d2b.dc21c",
+                "bf111c948cb6c34b"
+            ]
+        ]
+    },
+    {
+        "id": "4ebf2dc5.4f0fb4",
+        "type": "inject",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 790,
+        "y": 160,
+        "wires": [
+            [
+                "6bf6f55f.cbc8fc"
+            ]
+        ]
+    },
+    {
+        "id": "3046f701.42ce48",
+        "type": "ui_button",
+        "z": "e3c08c05.3866c",
+        "name": "Settings",
+        "group": "10788b43.59cf15",
+        "order": 7,
+        "width": "1",
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "Settings",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-cog",
+        "payload": "{\"tab\":\"Settings\"}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 120,
+        "y": 660,
+        "wires": [
+            [
+                "593fc5ab.a86aec"
+            ]
+        ]
+    },
+    {
+        "id": "8b02aab4.d444e8",
+        "type": "change",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "temp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2c6394c.649228",
+        "type": "ui_numeric",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "Calibration",
+        "tooltip": "",
+        "group": "b9da51c7.1f01",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-100",
+        "max": "100",
+        "step": "0.1",
+        "x": 630,
+        "y": 280,
+        "wires": [
+            [
+                "ea847af5.640828"
+            ]
+        ]
+    },
+    {
+        "id": "ea847af5.640828",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::calibration",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c94ab7ea.550f58",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "Process temp reading",
+        "func": "\nvar rawTemp = parseFloat(msg.payload).toFixed(1);\nvar calibration = global.get('calibration', 'storeInFile');\nvar adjustedTemp = parseFloat(rawTemp + calibration);\nvar logMsg = '';\n\nmsg.payload = adjustedTemp;\n\nif (calibration != 0) {\n    logMsg += 'rawTemp: ' + rawTemp + '; calibration: ' + calibration + '; ';\n}\n    logMsg += 'temp: ' + adjustedTemp;\n\nnode.log(logMsg);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "6bf6f55f.cbc8fc",
+                "8b02aab4.d444e8",
+                "b5ed0e58.53bd6"
+            ]
+        ]
+    },
+    {
+        "id": "735a1b58.9ba5d4",
+        "type": "ui_button",
+        "z": "e3c08c05.3866c",
+        "name": "Home",
+        "group": "b9da51c7.1f01",
+        "order": 8,
+        "width": "1",
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-home",
+        "payload": "{\"tab\":\"Home\"}",
+        "payloadType": "json",
+        "topic": "",
+        "topicType": "str",
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "593fc5ab.a86aec"
+            ]
+        ]
+    },
+    {
+        "id": "b5ed0e58.53bd6",
+        "type": "smooth",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "property": "payload",
+        "action": "mean",
+        "count": "5",
+        "round": "1",
+        "mult": "single",
+        "reduce": false,
+        "x": 1040,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a559936.c69ab8",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "Send values to chart",
+        "func": "\nvar entryDate = new Date();\n\nvar temp_msg = {};\ntemp_msg.topic = \"Temp\";\ntemp_msg.payload = {x: entryDate, y: parseFloat(global.get(\"temp\")).toFixed(1)};\n\nvar target_msg = {};\ntarget_msg.topic = \"Target\";\ntarget_msg.payload = {x: entryDate, y: global.get(\"targetTemp\", \"storeInFile\")};\n\nreturn [[target_msg, temp_msg]];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 400,
+        "wires": [
+            [
+                "c9472002.7fc0f",
+                "b2783e22.2b8f"
+            ],
+            [
+                "c9472002.7fc0f",
+                "b2783e22.2b8f"
+            ]
+        ]
+    },
+    {
+        "id": "c9472002.7fc0f",
+        "type": "ui_template",
+        "z": "e3c08c05.3866c",
+        "group": "10788b43.59cf15",
+        "name": "chart.js",
+        "order": 6,
+        "width": 6,
+        "height": 4,
+        "format": "<!--\nA node-red Dashboard UI template to draw charts using chart.js\nBefore use download the file Chart.bundle.min.js from chartjs.org and \nsave in an appropriate folder (e.g. .node-red/static). \nIn settings.js set httpStatic to the full path of that folder and restart node-red.\nMake sure that the options for 'Pass through messages' and 'Add output messages' \nin this node are cleared.\nFor basic use set the id and size you want in the canvas tag and set chartID to the id\nSetup chartDef as required for your chart (see the chart.js docs)\nIn addition, for each dataset specify in chartDef the message topic that you will use for that channel.\nTo (optionally) provide the chart with a one-off set of data send the node a message with:\nmsg.action = \"load\"\nmsg.payload = [\n{topic: \"mytopic1\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n{topic: \"mytopic2\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n...]\nWhere mytopic1 and mytopic2 are the the topics specified in the chartDef\n\nTo provide the chart with data incrementally (for a time series for example)\nsend it messages of the form\n{topic: \"mytopic1\", payload: {x:xvalue,y:yvalue}}\nThe chart will be updated as each sample is provided.\nTo limit the growth of the chart set chartMaxPoints and/or chartTimeSpan in the Chart Helper node\nas described at the head of that node.\nIf you find that chart seems to flicker and scroll bars come and go then try \nsetting a size other than auto in the Size specification for this node.\n\nFor Bar charts the x value is the label for the bar and the y value is the bar value\n\nNote that since the chart samples are stored in the browser then the chart will be cleared each\ntime the browser is refreshed (and will be clear on initially opening the view). In order to \nprovided persistency over browser opening and refresh this node may be used in conjunction with\nthe Chart Helper function node.  Details for its use are in the source of that node.\n\nIf your flow includes more that one instance of this script then the line fetching \nChart.bundle.min.js need only be included in one of them\n-->\n<script src=\"/Chart.bundle.min.js\"></script>\n<canvas id=\"BKChart\" width=\"300\" height=\"200\"></canvas>\n<script>\n(function() {\n    var chartID = \"BKChart\";           // set this to the id you have specified in the canvas tag above\n    // setup the chart definition as defined in the chart.js documentation, in addition setting up the topic\n    // for each channel\n    var chartDef = {\n        type: 'line',\n        data: {\n            datasets: [{\n                topic: \"Target\",    // used here not by chart.js\n                label: \"Target\",\n                yAxisID: \"1\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#ff0000\",\n                pointRadius: 0,\n                pointBorderColor: \"#ff0000\",\n                pointBackgroundColor: \"#ff0000\",\n                backgroundColor:  \"#ff0000\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }, {\n                topic: \"Temp\",    // used here not by chart.js\n                label: \"Temp\",\n                yAxisID: \"2\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#0000ff\",\n                pointRadius: 0,\n                pointBorderColor: \"#0000ff\",\n                pointBackgroundColor: \"#0000ff\",\n                backgroundColor:  \"#0000ff\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }]\n        },\n        options: {\n            scales: {\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    },\n                    ticks: {\n                        autoSkip: true,\n                        maxTicksLimit: 3,\n                        maxRotation: 0,\n                        minRotation: 0\n                    }\n                }],\n                yAxes: [{\n                    id: \"1\",\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }, {\n                    id: \"2\",\n                    display: false,\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }]\n            },\n            animation: {\n                duration: 0\n            }\n        }\n    }\n        \n/***** You shouldn't normally need to change anything below here *****/    \n    var myChart = null;\n    var loaded = false;     // indicates whether we have already had a load action\n    var chartTimeSpan;\n    var chartMaxPoints;\n\n    function doChart(msg, scope) {\n        if (!myChart) {\n            // chart does not exist so load the data and create it\n            var ctx = document.getElementById(chartID);\n            myChart = new Chart(ctx, chartDef);     \n        }\n        // chart already exists, update it\n        var datasets = myChart.data.datasets;\n        // is this a load or preload action?\n        if (msg.action === \"load\" || msg.action === \"preload\") {\n            // yes, do not allow preload if we have already had a load\n            // so do it if this is a load or we have not previously had a load\n            if (msg.action === \"load\" || !loaded) {\n                // pick up chartTimeSpan and chartMaxPoints if they have been provided\n                if (typeof msg.chartTimeSpan != 'undefined') {\n                    chartTimeSpan = msg.chartTimeSpan;\n                }\n                if (typeof msg.chartMaxPoints != 'undefined') {\n                    chartMaxPoints = msg.chartMaxPoints;\n                }\n                    \n                // replace existing data for matching topics\n                for (var j = 0; j < msg.payload.length; j++) {\n                    var topic = msg.payload[j].topic;\n                    // find it in the chart\n                    for (var i = 0; i < datasets.length; i++) {\n                        if (datasets[i].topic == topic) {\n                            // if stripping old samples by time is required then ensure the x value is Date\n                            if (chartTimeSpan > 0 ) {\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    if (typeof data[k].x === \"string\") {\n                                        data[k].x = new Date(data[k].x);\n                                    }\n                                }\n                            }\n                            if (chartDef.type !== \"bar\") {\n                                datasets[i].data = msg.payload[j].data;\n                            } else {\n                                // bar chart so x values must go to labels and y values to dataset\n                                datasets[i].data = [];\n                                myChart.data.labels = [];\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    datasets[i].data.push(data[k].y);\n                                    myChart.data.labels.push(data[k].x);\n                                }\n                            }\n                            break;\n                        }\n                    }\n                }\n            }\n            if (msg.action === \"load\") loaded = true;\n            myChart.update();\n        } else {\n            // does the topic match one of the datasets?\n            for (var i = 0; i < datasets.length; i++) {\n                if (datasets[i].topic == msg.topic) {\n                    // if stripping old samples by time is required then ensure the x value is Date\n                    if (chartTimeSpan > 0 && typeof msg.payload.x === \"string\") {\n                        msg.payload.x = new Date(msg.payload.x);\n                    }\n                    if (chartDef.type !== \"bar\") {\n                        datasets[i].data.push(msg.payload);\n                    } else {\n                         // bar chart so x value must go to labels and y value to dataset\n                        datasets[i].data.push(msg.payload.y);\n                        myChart.data.labels.push(msg.payload.x);\n                    }\n                    myChart.update();\n                    break;\n                }\n            }\n        }\n        // strip off samples older than now\n        // charTimeSpan == 0 implies don't do it\n        var shifted = false;\n        if (chartTimeSpan > 0) {\n            var now = new Date();\n            var oldestTimeAllowed = now - chartTimeSpan;\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data[0] && getTime(dataset.data[0].x) < oldestTimeAllowed) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        // strip samples off the front if there are now too many\n        // charTimeSpan == 0 implies don't do it\n        if (chartMaxPoints > 0) {\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data.length > chartMaxPoints) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        if (shifted) {\n            myChart.update();\n        }\n        \n        var maxValue = getMax(myChart);\n        myChart.options.scales.yAxes[0].ticks.max = maxValue + 10;\n        myChart.options.scales.yAxes[1].ticks.max = maxValue + 10;\n        \n        var minValue = getMin(myChart);\n        myChart.options.scales.yAxes[0].ticks.min = minValue - 10;\n        myChart.options.scales.yAxes[1].ticks.min = minValue - 10;\n    };\n\n    var getMax = function(chart) {\n        datasets = chart.data.datasets;\n        var maxValue = 0;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y > maxValue) {\n                    maxValue = d.y\n                }\n            })\n        }\n        return parseInt(maxValue);\n    }\n\n    var getMin = function(chart) {\n        datasets = chart.data.datasets;\n        var minValue = 1000;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y < minValue) {\n                    minValue = d.y\n                }\n            })\n        }\n        return parseInt(minValue);\n    }\n\n    // gets the time of an x value, works for strings or Date types\n    function getTime(x) {\n        if (typeof x === \"string\") x = new Date(x);\n        return x.getTime();\n    }\n    \n    // builds the preload message for sending back to the chart helper\n    function preloadMsg() {\n        var preMsg = {action: \"preload\", payload: \"preload\"};\n        // build array of topics in chart\n        var topics = [];\n        for (var i=0; i<chartDef.data.datasets.length; i++) {\n            topics.push(chartDef.data.datasets[i].topic);\n        }\n        preMsg.topics = topics;\n        // has the chart already been created\n        if (myChart) {\n            preMsg.lastXValue = 1;\n        } else {\n            preMsg.lastXValue = 0;\n        }\n        return preMsg;\n    }\n\n    (function(scope) {\n        // this code gets run when the a view is opened on the node in the browser\n        // send a preload message back to node red to ask it send\n        // us a complete set of data. Pass down max points and time span to the helper node for it to use\n        // plus an array of the topics of interest\n        scope.send( preloadMsg() );\n        \n        scope.$watch('msg', function(msg) {\n            if (msg) {\n                doChart(msg, scope);\n            }\n        });\n    })(scope);\n})();\n</script>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 620,
+        "y": 380,
+        "wires": [
+            [
+                "b2783e22.2b8f"
+            ]
+        ]
+    },
+    {
+        "id": "b2783e22.2b8f",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "BKChart Helper",
+        "func": "// A helper for the node-red chart.js template node\n// see the template node for the majority of the user defined data\n// here all that is needed is to setup values to limit the length of the chart\n// Firstly chartMaxPoints may be set non-zero and (for each channel) when the number\n// of points exceeds this value then the oldest samples will be discarded.\n// Alternatively (or in addition) if the x axis is time based then chartTimeSpan (milliseconds)\n// may be set and then old samples will be discarded to limit the chart to this time span.\n\nvar chartMaxPoints = 0;             //max no points in a chart before they drop off the left. Set to zero to disable\nvar chartTimeSpan = 60*60*1000;     //chart time span 4 mins. Set to zero to disable\n\n// ----------------------------------------------------------\n// You should not need to change anything below here\n\n// with inputs connected to the same nodes as a chart.js node this maintains a chart history\n// for preloading into the chart when it is opened in the browser\n\nvar topicsOfinterest = context.get('topicsOfInterest');    // can't use null here\nif (typeof topicsOfInterest == 'undefined') topicsOfInterest = null;\n\nvar msg2 = null;\nvar datasets = context.get('datasets') || [];\n// each dataset maps to a channel on the chart and consists of a hash with fields\n// topic: the topic name of the channel\n// data: an array of data points {x: x_value, y: y_value}\n// If msg.action == \"preload\" then the topic and payload are ignored and a message is passed\n// on containing the current chart data and msg.action still set to preload\n\nif (msg.action === \"preload\") {\n    // we should have been passed the topics of interest\n    topicsOfInterest = msg.topics;      // null if not provided\n    context.set('topicsOfInterest', topicsOfInterest);\n    // send a message containing the current chart data time range values, leave rest of msg as is\n    msg.payload = datasets;\n    msg.chartMaxPoints = chartMaxPoints;\n    msg.chartTimeSpan = chartTimeSpan;\n} else if (msg.action === \"restore\") {\n    // restoring from persistent memory\n    // step through the given datasets, if any\n    if (Array.isArray(msg.payload)) {\n        for (var i = 0; i < msg.payload.length; i++) {\n            topic = msg.payload[i].topic;\n            // find the matching topic\n            var found = false;\n            for (var k = 0; k < datasets.length; k++) {\n                if (datasets[k].topic == topic) {\n                    // insert the data in front of any that has been acquired since startup\n                    datasets[k].data = msg.payload[i].data.concat(datasets[k].data);\n                    found = true;\n                    break;\n                }\n            }\n            if (!found) {\n                // new topic so make a new dataset and fill it\n                datasets.push({topic: topic, data: msg.payload[i].data});\n            }\n        }\n    }\n    // remember that we have restored in order to enable future writes to persistent store\n    context.set(\"restored\", true);\n    // send a preload action to the chart\n    msg.action = \"preload\";\n    msg.payload = datasets;\n} else if (msg.action === \"load\") {\n    // replace existing data for matching topics\n    for (var j = 0; j < msg.payload.length; j++) {\n        var topic = msg.payload[j].topic;\n        // find it in the chart\n        found = false;\n        for (i = 0; i < datasets.length; i++) {\n            if (datasets[i].topic == topic) {\n                datasets[i].data = msg.payload[j].data;\n                found = true;\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset and fill it\n            datasets.push({topic: topic, data: msg.payload[j].data});\n        }\n    }\n    msg = null;         // don't send anything on\n} else {\n    // check whether the topic is one we are interested in\n    if (topicsOfInterest === null  || topicsOfInterest.indexOf(msg.topic) >= 0) {\n        found = false;\n        // find the right dataset if it already exists\n        for (i = 0; i < datasets.length; i++) {\n            dataset = datasets[i];\n            if (dataset.topic == msg.topic) {\n                found = true;\n                dataset.data.push(msg.payload);\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset\n            datasets.push({topic: msg.topic, data: [msg.payload]});\n        }\n    } else {\n        // ignore topics that are not of interest\n    }\n    // do not pass on a message to o/p 1, send the datasets to o/p 2 for persistent\n    // storage if required and we have been given data on startup\n    // this is to prevent the persistent store being overwritten before it has been read\n    msg = null;\n    if (context.get(\"restored\")) {\n        msg2 = {payload: datasets};\n    }\n}\n    \n// remove any points that are too old\nif (chartTimeSpan > 0) {\n    var now = new Date();\n    var oldestTimeAllowed = new Date();\n    oldestTimeAllowed.setTime(now.getTime() - (chartTimeSpan));\n    for (i = 0; i < datasets.length; i++) {\n        var data = datasets[i].data;\n        while (data.length > 0 ) {\n            // convert the x value (in place) to a Date if it is a string\n            if (typeof data[0].x === \"string\") {\n                data[0].x = new Date(data[0].x);\n            }            \n            if (data[0].x < oldestTimeAllowed) {\n                data.shift();\n            } else {\n                break;\n            }\n        }\n    }\n}\n// strip samples off the front if there are now too many\n// charTimeSpan == 0 implies don't do it\nif (chartMaxPoints > 0) {\n    var shifted = false;\n    for (i = 0; i < datasets.length; i++) {\n        data = datasets[i].data;\n        while(data.length > chartMaxPoints) {\n            data.shift();\n        }\n    }\n}\ncontext.set('datasets', datasets);\nreturn [msg,msg2];\n\n",
+        "outputs": "2",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 460,
+        "wires": [
+            [
+                "c9472002.7fc0f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8a1da0b2.3bebc",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "func": "\nmsg.payload = global.get('targetTemp', 'storeInFile')\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 320,
+        "wires": [
+            [
+                "453fb9a4.a63dd8"
+            ]
+        ]
+    },
+    {
+        "id": "5ed88295.1d49dc",
+        "type": "inject",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "8a1da0b2.3bebc"
+            ]
+        ]
+    },
+    {
+        "id": "6723df8d.56c21",
+        "type": "link in",
+        "z": "e3c08c05.3866c",
+        "name": "FermentInfo.TargetTemp Link In",
+        "links": [
+            "800fdbd5.b33ce8"
+        ],
+        "x": 695,
+        "y": 280,
+        "wires": [
+            [
+                "453fb9a4.a63dd8"
+            ]
+        ]
+    },
+    {
+        "id": "453fb9a4.a63dd8",
+        "type": "ui_numeric",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "label": "Target",
+        "tooltip": "",
+        "group": "10788b43.59cf15",
+        "order": 4,
+        "width": 5,
+        "height": 1,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "step": "0.1",
+        "x": 810,
+        "y": 320,
+        "wires": [
+            [
+                "c13a8bbc.4eba08"
+            ]
+        ]
+    },
+    {
+        "id": "c13a8bbc.4eba08",
+        "type": "change",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::targetTemp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 980,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb1d6a04.a1c6a8",
+        "type": "ui_text",
+        "z": "e3c08c05.3866c",
+        "group": "10788b43.59cf15",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Ferment Name",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 840,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8eb49577.a9ed78",
+        "type": "inject",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(storeInFile)::fermentName",
+        "payloadType": "global",
+        "x": 580,
+        "y": 40,
+        "wires": [
+            [
+                "cb1d6a04.a1c6a8"
+            ]
+        ]
+    },
+    {
+        "id": "d07f8d2b.dc21c",
+        "type": "function",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "func": "msg.payload = global.get('fermentname', 'storeInFile');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 80,
+        "wires": [
+            [
+                "cb1d6a04.a1c6a8"
+            ]
+        ]
+    },
+    {
+        "id": "2468120e.f629fe",
+        "type": "ui_switch",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "Sync target to BC",
+        "tooltip": "",
+        "group": "b9da51c7.1f01",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 690,
+        "y": 380,
+        "wires": [
+            [
+                "713e947d.74620c"
+            ]
+        ]
+    },
+    {
+        "id": "713e947d.74620c",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::syncTargettoBC",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41b3b5db.7c3ecc",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::deviceName",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0511dd1.f24b5",
+        "type": "ui_text_input",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "Device Name",
+        "tooltip": "",
+        "group": "b9da51c7.1f01",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "41b3b5db.7c3ecc"
+            ]
+        ]
+    },
+    {
+        "id": "873341eb.cd744",
+        "type": "link out",
+        "z": "e3c08c05.3866c",
+        "name": "Sync target to BC",
+        "links": [
+            "e830e407.bbad68",
+            "72b0d5f93c9f45ab"
+        ],
+        "x": 975,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "e830e407.bbad68",
+        "type": "link in",
+        "z": "88b059e6.3f9688",
+        "name": "Sync target to BC",
+        "links": [
+            "873341eb.cd744"
+        ],
+        "x": 155,
+        "y": 40,
+        "wires": [
+            [
+                "b112ac3e.e4199"
+            ]
+        ]
+    },
+    {
+        "id": "30f00c86.0504b4",
+        "type": "brewers-chronicle-post",
+        "z": "88b059e6.3f9688",
+        "name": "BC Post => target",
+        "readingtype": "3",
+        "readingvalue": "#:(storeInFile)::targetTemp",
+        "readingvaluetype": "global",
+        "x": 650,
+        "y": 240,
+        "wires": [
+            [
+                "14ab9cac.e05c93"
+            ]
+        ]
+    },
+    {
+        "id": "7f450963.2157e8",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::bc_api_key",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 850,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfd1a3a.8890e6",
+        "type": "ui_text_input",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "BC API Key",
+        "tooltip": "",
+        "group": "b9da51c7.1f01",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 610,
+        "y": 440,
+        "wires": [
+            [
+                "7f450963.2157e8"
+            ]
+        ]
+    },
+    {
+        "id": "3b2b169f.eaab8a",
+        "type": "ui_text",
+        "z": "432a76d2.855fe8",
+        "group": "b9da51c7.1f01",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "<a href='https://brewerschronicle.com/BreweryDetails' target='new'>BC Website</a>",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 670,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "91854829.28ee28",
+        "type": "switch",
+        "z": "88b059e6.3f9688",
+        "name": "API key set?",
+        "property": "#:(storeInFile)::bc_api_key",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "43d78844.6c3c28"
+            ],
+            [
+                "978f0873.204f28",
+                "eda286f2.55cb88"
+            ]
+        ]
+    },
+    {
+        "id": "25641a61.4bcd56",
+        "type": "ui_toast",
+        "z": "88b059e6.3f9688",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 1070,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b112ac3e.e4199",
+        "type": "switch",
+        "z": "88b059e6.3f9688",
+        "name": "BC sync active?",
+        "property": "syncTargettoBC",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 320,
+        "y": 100,
+        "wires": [
+            [
+                "91854829.28ee28"
+            ]
+        ]
+    },
+    {
+        "id": "43d78844.6c3c28",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Please fill out BC API Key in Settings",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 140,
+        "wires": [
+            [
+                "25641a61.4bcd56"
+            ]
+        ]
+    },
+    {
+        "id": "14ab9cac.e05c93",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Target temp sync'd to BC",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 280,
+        "wires": [
+            [
+                "25641a61.4bcd56"
+            ]
+        ]
+    },
+    {
+        "id": "b7d9793c.404d38",
+        "type": "inject",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "props": [],
+        "repeat": "900",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "0.1",
+        "topic": "",
+        "x": 110,
+        "y": 100,
+        "wires": [
+            [
+                "b112ac3e.e4199"
+            ]
+        ]
+    },
+    {
+        "id": "da1e6129.66bc5",
+        "type": "brewers-chronicle-post",
+        "z": "88b059e6.3f9688",
+        "name": "BC Post => temp",
+        "readingtype": "4",
+        "readingvalue": "temp",
+        "readingvaluetype": "global",
+        "x": 610,
+        "y": 360,
+        "wires": [
+            [
+                "7b5458dc.c005d8",
+                "6bd692ac.024f1c"
+            ]
+        ]
+    },
+    {
+        "id": "7b5458dc.c005d8",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Temp sync'd to BC",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 360,
+        "wires": [
+            [
+                "25641a61.4bcd56"
+            ]
+        ]
+    },
+    {
+        "id": "35566aed.0cba76",
+        "type": "ui_button",
+        "z": "e3c08c05.3866c",
+        "name": "Sync to BC",
+        "group": "10788b43.59cf15",
+        "order": 5,
+        "width": 1,
+        "height": 1,
+        "passthru": false,
+        "label": "",
+        "tooltip": "Sync to BC",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-cloud-upload",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 850,
+        "y": 380,
+        "wires": [
+            [
+                "873341eb.cd744"
+            ]
+        ]
+    },
+    {
+        "id": "978f0873.204f28",
+        "type": "delay",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 460,
+        "y": 280,
+        "wires": [
+            [
+                "63238ed5.f93c9"
+            ]
+        ]
+    },
+    {
+        "id": "6bd692ac.024f1c",
+        "type": "brewers-chronicle-get",
+        "z": "88b059e6.3f9688",
+        "name": "get ferment info",
+        "getmethod": "FermentSessionInfo",
+        "x": 560,
+        "y": 460,
+        "wires": [
+            [
+                "9eeea274.8d9a3",
+                "8d827384.d5e05"
+            ]
+        ]
+    },
+    {
+        "id": "3eb30ec7.923ee2",
+        "type": "link out",
+        "z": "88b059e6.3f9688",
+        "name": "FermentInfo.Name",
+        "links": [
+            "93651f01.f25e6"
+        ],
+        "x": 1025,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "9eeea274.8d9a3",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "fermentinfo.Name",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.Name",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 800,
+        "y": 420,
+        "wires": [
+            [
+                "3eb30ec7.923ee2"
+            ]
+        ]
+    },
+    {
+        "id": "93651f01.f25e6",
+        "type": "link in",
+        "z": "e3c08c05.3866c",
+        "name": "FermentInfo.Name Link In",
+        "links": [
+            "3eb30ec7.923ee2"
+        ],
+        "x": 675,
+        "y": 100,
+        "wires": [
+            [
+                "cb1d6a04.a1c6a8"
+            ]
+        ]
+    },
+    {
+        "id": "8d827384.d5e05",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "fermentinfo.TargetTemperature",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.TargetTemperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 460,
+        "wires": [
+            [
+                "800fdbd5.b33ce8"
+            ]
+        ]
+    },
+    {
+        "id": "800fdbd5.b33ce8",
+        "type": "link out",
+        "z": "88b059e6.3f9688",
+        "name": "FermentInfo.TargetTemp",
+        "links": [
+            "6723df8d.56c21"
+        ],
+        "x": 1025,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "aa65bb77.3c0658",
+        "type": "inject",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "5",
+        "topic": "",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "b3e612abf3ab315f"
+            ]
+        ]
+    },
+    {
+        "id": "e58e87bd.2d15f8",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash-in temp",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "66",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 120,
+        "wires": [
+            [
+                "c329e3d5.c69c"
+            ]
+        ]
+    },
+    {
+        "id": "c329e3d5.c69c",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "17",
+        "readingvalue": "payload",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a2c7b4e9.5df178",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 10,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash started",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "5f3ac977.8ce008"
+            ]
+        ]
+    },
+    {
+        "id": "5f3ac977.8ce008",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "13",
+        "readingvalue": "payload",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ecf33b7f.b2c9e8",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash step started",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "65",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "9143cbeb.a965f8"
+            ]
+        ]
+    },
+    {
+        "id": "9143cbeb.a965f8",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "15",
+        "readingvalue": "payload",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c8c4b57.6d1214",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 12,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash step ended",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 300,
+        "wires": [
+            [
+                "9da6df49.4f9c1"
+            ]
+        ]
+    },
+    {
+        "id": "9da6df49.4f9c1",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "16",
+        "readingvalue": "",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19d7e415.1023ac",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash target temp",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "64.5",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "d7d4cacc.ff8bc8"
+            ]
+        ]
+    },
+    {
+        "id": "d7d4cacc.ff8bc8",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "18",
+        "readingvalue": "payload",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c62ef038.2642b",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 14,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash temp",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "57",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 420,
+        "wires": [
+            [
+                "6b8cc80f.741678"
+            ]
+        ]
+    },
+    {
+        "id": "6b8cc80f.741678",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "19",
+        "readingvalue": "payload",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bef763f.e2554a",
+        "type": "ui_button",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "group": "8e4748f9.2a2398",
+        "order": 15,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "mash completed",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "65",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 200,
+        "y": 480,
+        "wires": [
+            [
+                "5fc9a74.02a1158"
+            ]
+        ]
+    },
+    {
+        "id": "5fc9a74.02a1158",
+        "type": "brewers-chronicle-post",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "readingtype": "14",
+        "readingvalue": "",
+        "readingvaluetype": "msg",
+        "x": 440,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2544b8d6.92f2f8",
+        "type": "ui_text_input",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "label": "boil id",
+        "tooltip": "",
+        "group": "8e4748f9.2a2398",
+        "order": 16,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": 300,
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 230,
+        "y": 60,
+        "wires": [
+            [
+                "ed98d89b.a6d3c8"
+            ]
+        ]
+    },
+    {
+        "id": "ed98d89b.a6d3c8",
+        "type": "change",
+        "z": "d5dbdbd2.269aa8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::selected_batch_id",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 460,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eda286f2.55cb88",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::targetTemp",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "30f00c86.0504b4"
+            ]
+        ]
+    },
+    {
+        "id": "63238ed5.f93c9",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "temp",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "da1e6129.66bc5"
+            ]
+        ]
+    },
+    {
+        "id": "7503b3ff.d6e00c",
+        "type": "rpi-gpio out",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "pin": "31",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 560,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "ad5600a4.96755",
+        "type": "ui_switch",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "label": "GPIO 31",
+        "tooltip": "",
+        "group": "10788b43.59cf15",
+        "order": 17,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 400,
+        "y": 620,
+        "wires": [
+            [
+                "7503b3ff.d6e00c"
+            ]
+        ]
+    },
+    {
+        "id": "d584ff65.3a3ef",
+        "type": "rpi-gpio out",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "pin": "32",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 560,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5c9a04cf.6fdd0c",
+        "type": "ui_switch",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "label": "GPIO 32",
+        "tooltip": "",
+        "group": "10788b43.59cf15",
+        "order": 18,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 400,
+        "y": 680,
+        "wires": [
+            [
+                "d584ff65.3a3ef"
+            ]
+        ]
+    },
+    {
+        "id": "627c0dda.2eb8c4",
+        "type": "rpi-gpio out",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "pin": "33",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 560,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "e119ad1e.2b6ea",
+        "type": "ui_switch",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "label": "GPIO 33",
+        "tooltip": "",
+        "group": "10788b43.59cf15",
+        "order": 19,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "0",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "1",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 400,
+        "y": 740,
+        "wires": [
+            [
+                "627c0dda.2eb8c4"
+            ]
+        ]
+    },
+    {
+        "id": "a131fa66.33fc58",
+        "type": "inject",
+        "z": "88b059e6.3f9688",
+        "name": "init pins",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 180,
+        "y": 660,
+        "wires": [
+            [
+                "ad5600a4.96755",
+                "5c9a04cf.6fdd0c"
+            ]
+        ]
+    },
+    {
+        "id": "ac7c54fe.2a04e8",
+        "type": "inject",
+        "z": "88b059e6.3f9688",
+        "name": "init pins",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "e119ad1e.2b6ea"
+            ]
+        ]
+    },
+    {
+        "id": "b66fb227.885a",
+        "type": "link in",
+        "z": "432a76d2.855fe8",
+        "name": "initSettings",
+        "links": [
+            "6e9d70dd.c266f"
+        ],
+        "x": 155,
+        "y": 300,
+        "wires": [
+            [
+                "58bbab1f.696b54",
+                "b2710650.33f2a8",
+                "d6fba3e2.d4af8",
+                "503033.b04e9fcc",
+                "9b2327ae.5648f8",
+                "54fee94f.561958"
+            ]
+        ]
+    },
+    {
+        "id": "6e9d70dd.c266f",
+        "type": "link out",
+        "z": "e3c08c05.3866c",
+        "name": "uiControl_GetSettings",
+        "links": [
+            "b66fb227.885a"
+        ],
+        "x": 445,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "58bbab1f.696b54",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.syncTargettoBC",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::syncTargettoBC",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "2468120e.f629fe"
+            ]
+        ]
+    },
+    {
+        "id": "b2710650.33f2a8",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.calibration",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::calibration",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "e2c6394c.649228"
+            ]
+        ]
+    },
+    {
+        "id": "d6fba3e2.d4af8",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.bc_api_key",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::bc_api_key",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 440,
+        "wires": [
+            [
+                "bfd1a3a.8890e6"
+            ]
+        ]
+    },
+    {
+        "id": "503033.b04e9fcc",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.deviceName",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::deviceName",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "e0511dd1.f24b5"
+            ]
+        ]
+    },
+    {
+        "id": "789edb29.687bd4",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::deviceMode",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 860,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54fee94f.561958",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "get global.deviceMode",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::deviceMode",
+                "tot": "global"
+            },
+            {
+                "t": "set",
+                "p": "enable",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 40,
+        "wires": [
+            [
+                "830279a4126ef83e"
+            ]
+        ]
+    },
+    {
+        "id": "830279a4126ef83e",
+        "type": "ui_multistate_switch",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "group": "b9da51c7.1f01",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "label": "Device mode",
+        "stateField": "payload",
+        "enableField": "enable",
+        "rounded": false,
+        "useThemeColors": true,
+        "hideSelectedLabel": false,
+        "options": [
+            {
+                "label": "Monitor",
+                "value": "monitor",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "Control",
+                "value": "control",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "x": 620,
+        "y": 40,
+        "wires": [
+            [
+                "789edb29.687bd4"
+            ]
+        ]
+    },
+    {
+        "id": "bf111c948cb6c34b",
+        "type": "switch",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "property": "#:(storeInFile)::temp_sensorid",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 310,
+        "y": 200,
+        "wires": [
+            [
+                "dc0594a8.4d8ae8"
+            ],
+            [
+                "996e10c7b3a3b616"
+            ]
+        ]
+    },
+    {
+        "id": "0d412ba633122c16",
+        "type": "ui_toast",
+        "z": "e3c08c05.3866c",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 670,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "996e10c7b3a3b616",
+        "type": "change",
+        "z": "e3c08c05.3866c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Please select a sensor id from settings area",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "0d412ba633122c16"
+            ]
+        ]
+    },
+    {
+        "id": "01a338fa6cddc570",
+        "type": "switch",
+        "z": "88b059e6.3f9688",
+        "name": "API Key set?",
+        "property": "#:(storeInFile)::bc_api_key",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 410,
+        "y": 540,
+        "wires": [
+            [
+                "6bd692ac.024f1c"
+            ],
+            [
+                "501b7b8b62d9ac97"
+            ]
+        ]
+    },
+    {
+        "id": "501b7b8b62d9ac97",
+        "type": "change",
+        "z": "88b059e6.3f9688",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Please enter BC API key in Settings area",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 540,
+        "wires": [
+            [
+                "71fff23638ee7ad6"
+            ]
+        ]
+    },
+    {
+        "id": "71fff23638ee7ad6",
+        "type": "ui_toast",
+        "z": "88b059e6.3f9688",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 810,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "72b0d5f93c9f45ab",
+        "type": "link in",
+        "z": "88b059e6.3f9688",
+        "name": "Sync target to BC",
+        "links": [
+            "873341eb.cd744"
+        ],
+        "x": 155,
+        "y": 400,
+        "wires": [
+            [
+                "b3e612abf3ab315f"
+            ]
+        ]
+    },
+    {
+        "id": "b3e612abf3ab315f",
+        "type": "switch",
+        "z": "88b059e6.3f9688",
+        "name": "BC sync active?",
+        "property": "#:(storeInFile)::syncTargettoBC",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "01a338fa6cddc570"
+            ]
+        ]
+    }
+]
