@@ -1,15 +1,15 @@
 [
     {
-        "id": "531a9bf4.bad494",
-        "type": "tab",
-        "label": "Sample",
-        "disabled": true,
-        "info": ""
-    },
-    {
         "id": "e3c08c05.3866c",
         "type": "tab",
         "label": "Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a93928119aec5e99",
+        "type": "tab",
+        "label": "Temperature",
         "disabled": false,
         "info": ""
     },
@@ -28,10 +28,17 @@
         "info": ""
     },
     {
+        "id": "de95195cf8e6da5e",
+        "type": "tab",
+        "label": "Tilt integration",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "88b059e6.3f9688",
         "type": "tab",
         "label": "Brewers Chronicle",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -172,256 +179,27 @@
         "order": 1,
         "disp": true,
         "width": "6",
-        "collapse": false
-    },
-    {
-        "id": "35f318e2.949be8",
-        "type": "ui_spacer",
-        "z": "e3c08c05.3866c",
-        "name": "spacer",
-        "group": "10788b43.59cf15",
-        "order": 9,
-        "width": 3,
-        "height": 1
-    },
-    {
-        "id": "6bef699e.30ee88",
-        "type": "ui_tab",
-        "name": "BC Testing",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "8e4748f9.2a2398",
-        "type": "ui_group",
-        "name": "BC test group",
-        "tab": "6bef699e.30ee88",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
+        "collapse": true
     },
     {
         "id": "30c770218c75263c",
         "type": "ui_group",
         "name": "Debug",
-        "tab": "970798f9.ff53c8",
+        "tab": "ae52acd2.d4a07",
         "order": 2,
         "disp": true,
         "width": "6",
         "collapse": true
     },
     {
-        "id": "4e669598.5ef6dc",
+        "id": "9f08e52c83e7ab7b",
         "type": "ui_group",
-        "name": "myHtmlCodeExample",
-        "tab": "cf789d38.b69fa",
-        "order": 1,
+        "name": "Tilt integration",
+        "tab": "ae52acd2.d4a07",
+        "order": 3,
         "disp": true,
-        "width": "10",
+        "width": "6",
         "collapse": true
-    },
-    {
-        "id": "1d5d2d12.f1a4b3",
-        "type": "ui_group",
-        "name": "nothingGroup",
-        "tab": "cf789d38.b69fa",
-        "order": 2,
-        "disp": true,
-        "width": "10",
-        "collapse": true
-    },
-    {
-        "id": "cf789d38.b69fa",
-        "type": "ui_tab",
-        "name": "testGroupOpenClose",
-        "icon": "face",
-        "order": 14,
-        "disabled": false,
-        "hidden": false
-    },
-    {
-        "id": "53695c22.da6614",
-        "type": "http request",
-        "z": "531a9bf4.bad494",
-        "name": "get sensors",
-        "method": "GET",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "http://127.0.0.1:1880/sensors/1wire/",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "authType": "",
-        "x": 400,
-        "y": 120,
-        "wires": [
-            [
-                "a4a8c70a.498658"
-            ]
-        ]
-    },
-    {
-        "id": "a4a8c70a.498658",
-        "type": "function",
-        "z": "531a9bf4.bad494",
-        "name": "",
-        "func": "\nvar listArray = [];\n\nmsg.options = msg.payload;\nmsg.payload = global.get('temp_sensorid');\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 120,
-        "wires": [
-            [
-                "c3f032f9.2146c"
-            ]
-        ]
-    },
-    {
-        "id": "c3f032f9.2146c",
-        "type": "ui_dropdown",
-        "z": "531a9bf4.bad494",
-        "name": "temp sensor",
-        "label": "",
-        "tooltip": "",
-        "place": "Select option",
-        "group": "10788b43.59cf15",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "multiple": false,
-        "options": [],
-        "payload": "",
-        "topic": "",
-        "topicType": "str",
-        "x": 760,
-        "y": 120,
-        "wires": [
-            [
-                "1cebd71d.7e4829"
-            ]
-        ]
-    },
-    {
-        "id": "64b1d95c.229e58",
-        "type": "sensor-dynamic-ds18b20",
-        "z": "531a9bf4.bad494",
-        "name": "temp",
-        "topic": "",
-        "x": 470,
-        "y": 220,
-        "wires": [
-            [
-                "cd85f616.a65b38"
-            ]
-        ]
-    },
-    {
-        "id": "cd85f616.a65b38",
-        "type": "debug",
-        "z": "531a9bf4.bad494",
-        "name": "DS18B20 output",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 650,
-        "y": 260,
-        "wires": []
-    },
-    {
-        "id": "ba4fa5ac.454938",
-        "type": "function",
-        "z": "531a9bf4.bad494",
-        "name": "",
-        "func": "\nvar listArray = [];\n\nmsg.sensorid = global.get('temp_sensorid');\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 320,
-        "y": 220,
-        "wires": [
-            [
-                "64b1d95c.229e58"
-            ]
-        ]
-    },
-    {
-        "id": "1cebd71d.7e4829",
-        "type": "change",
-        "z": "531a9bf4.bad494",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "temp_sensorid",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 990,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8b835913.b816e8",
-        "type": "inject",
-        "z": "531a9bf4.bad494",
-        "name": "",
-        "props": [],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 160,
-        "y": 220,
-        "wires": [
-            [
-                "ba4fa5ac.454938"
-            ]
-        ]
-    },
-    {
-        "id": "ca27b8f9.6b1628",
-        "type": "inject",
-        "z": "531a9bf4.bad494",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payloadType": "str",
-        "x": 480,
-        "y": 180,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "9b2327ae.5648f8",
@@ -515,73 +293,20 @@
         ]
     },
     {
-        "id": "4bab58e5.1439b8",
-        "type": "sensor-dynamic-ds18b20",
-        "z": "e3c08c05.3866c",
-        "name": "temp",
-        "topic": "",
-        "x": 730,
-        "y": 260,
-        "wires": [
-            [
-                "c94ab7ea.550f58"
-            ]
-        ]
-    },
-    {
         "id": "6bf6f55f.cbc8fc",
         "type": "ui_text",
         "z": "e3c08c05.3866c",
         "group": "10788b43.59cf15",
-        "order": 2,
+        "order": 3,
         "width": "3",
         "height": "1",
         "name": "",
         "label": "Current temp",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 1050,
-        "y": 160,
+        "x": 690,
+        "y": 180,
         "wires": []
-    },
-    {
-        "id": "dc0594a8.4d8ae8",
-        "type": "function",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "func": "\nvar listArray = [];\n\nmsg.sensorid = global.get('temp_sensorid', 'storeInFile');\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 260,
-        "wires": [
-            [
-                "4bab58e5.1439b8"
-            ]
-        ]
-    },
-    {
-        "id": "8323670.986ec98",
-        "type": "inject",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "props": [],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 110,
-        "y": 260,
-        "wires": [
-            [
-                "9a559936.c69ab8",
-                "a70035495f41e4a9"
-            ]
-        ]
     },
     {
         "id": "4ebf2dc5.4f0fb4",
@@ -599,8 +324,8 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "str",
-        "x": 790,
-        "y": 160,
+        "x": 490,
+        "y": 180,
         "wires": [
             [
                 "6bf6f55f.cbc8fc"
@@ -626,7 +351,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1160,
+        "x": 680,
         "y": 260,
         "wires": [
             [
@@ -691,13 +416,13 @@
         "type": "function",
         "z": "e3c08c05.3866c",
         "name": "Process temp reading",
-        "func": "\nvar rawTemp = parseFloat(msg.payload).toFixed(1);\nvar calibration = parseFloat(global.get('calibration', 'storeInFile')).toFixed(1);\nvar adjustedTemp = parseFloat(parseFloat(rawTemp) + parseFloat(calibration)).toFixed(1);\nvar logMsg = '';\n\nmsg.payload = adjustedTemp;\n\nif (calibration != 0) {\n    logMsg += 'rawTemp: ' + rawTemp + '; calibration: ' + calibration + '; ';\n}\n\nlogMsg += 'temp: ' + adjustedTemp;\n\n//node.log(logMsg);\n\nreturn msg;",
+        "func": "\nvar rawTemp = parseFloat(msg.payload).toFixed(1);\nvar calibration = parseFloat(global.get('calibration', 'storeInFile')).toFixed(1) || 0.0;\nvar adjustedTemp = parseFloat(parseFloat(rawTemp) + parseFloat(calibration)).toFixed(1);\nvar logMsg = '';\n\nmsg.payload = adjustedTemp;\n\nif (calibration != 0) {\n    logMsg += 'rawTemp: ' + rawTemp + '; calibration: ' + calibration + '; ';\n}\n\nlogMsg += 'temp: ' + adjustedTemp;\n\nnode.log(logMsg);\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
+        "x": 440,
         "y": 240,
         "wires": [
             [
@@ -718,75 +443,9 @@
         "round": "1",
         "mult": "single",
         "reduce": false,
-        "x": 1140,
+        "x": 660,
         "y": 300,
         "wires": [
-            []
-        ]
-    },
-    {
-        "id": "9a559936.c69ab8",
-        "type": "function",
-        "z": "e3c08c05.3866c",
-        "name": "Send values to chart",
-        "func": "\nvar entryDate = new Date();\n\nvar temp_msg = {};\ntemp_msg.topic = \"Temp\";\ntemp_msg.payload = {x: entryDate, y: parseFloat(global.get(\"temp\")).toFixed(1)};\n\nvar target_msg = {};\ntarget_msg.topic = \"Target\";\ntarget_msg.payload = {x: entryDate, y: global.get(\"targetTemp\", \"storeInFile\")};\n\nreturn [[target_msg, temp_msg]];",
-        "outputs": 2,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 360,
-        "y": 460,
-        "wires": [
-            [
-                "c9472002.7fc0f",
-                "b2783e22.2b8f"
-            ],
-            [
-                "c9472002.7fc0f",
-                "b2783e22.2b8f"
-            ]
-        ]
-    },
-    {
-        "id": "c9472002.7fc0f",
-        "type": "ui_template",
-        "z": "e3c08c05.3866c",
-        "group": "10788b43.59cf15",
-        "name": "chart.js",
-        "order": 7,
-        "width": 6,
-        "height": 4,
-        "format": "<!--\nA node-red Dashboard UI template to draw charts using chart.js\nBefore use download the file Chart.bundle.min.js from chartjs.org and \nsave in an appropriate folder (e.g. .node-red/static). \nIn settings.js set httpStatic to the full path of that folder and restart node-red.\nMake sure that the options for 'Pass through messages' and 'Add output messages' \nin this node are cleared.\nFor basic use set the id and size you want in the canvas tag and set chartID to the id\nSetup chartDef as required for your chart (see the chart.js docs)\nIn addition, for each dataset specify in chartDef the message topic that you will use for that channel.\nTo (optionally) provide the chart with a one-off set of data send the node a message with:\nmsg.action = \"load\"\nmsg.payload = [\n{topic: \"mytopic1\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n{topic: \"mytopic2\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n...]\nWhere mytopic1 and mytopic2 are the the topics specified in the chartDef\n\nTo provide the chart with data incrementally (for a time series for example)\nsend it messages of the form\n{topic: \"mytopic1\", payload: {x:xvalue,y:yvalue}}\nThe chart will be updated as each sample is provided.\nTo limit the growth of the chart set chartMaxPoints and/or chartTimeSpan in the Chart Helper node\nas described at the head of that node.\nIf you find that chart seems to flicker and scroll bars come and go then try \nsetting a size other than auto in the Size specification for this node.\n\nFor Bar charts the x value is the label for the bar and the y value is the bar value\n\nNote that since the chart samples are stored in the browser then the chart will be cleared each\ntime the browser is refreshed (and will be clear on initially opening the view). In order to \nprovided persistency over browser opening and refresh this node may be used in conjunction with\nthe Chart Helper function node.  Details for its use are in the source of that node.\n\nIf your flow includes more that one instance of this script then the line fetching \nChart.bundle.min.js need only be included in one of them\n-->\n<script src=\"/Chart.bundle.min.js\"></script>\n<canvas id=\"BKChart\" width=\"300\" height=\"200\"></canvas>\n<script>\n(function() {\n    var chartID = \"BKChart\";           // set this to the id you have specified in the canvas tag above\n    // setup the chart definition as defined in the chart.js documentation, in addition setting up the topic\n    // for each channel\n    var chartDef = {\n        type: 'line',\n        data: {\n            datasets: [{\n                topic: \"Target\",    // used here not by chart.js\n                label: \"Target\",\n                yAxisID: \"1\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#ff0000\",\n                pointRadius: 0,\n                pointBorderColor: \"#ff0000\",\n                pointBackgroundColor: \"#ff0000\",\n                backgroundColor:  \"#ff0000\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }, {\n                topic: \"Temp\",    // used here not by chart.js\n                label: \"Temp\",\n                yAxisID: \"2\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#0000ff\",\n                pointRadius: 0,\n                pointBorderColor: \"#0000ff\",\n                pointBackgroundColor: \"#0000ff\",\n                backgroundColor:  \"#0000ff\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }]\n        },\n        options: {\n            scales: {\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    },\n                    ticks: {\n                        autoSkip: true,\n                        maxTicksLimit: 3,\n                        maxRotation: 0,\n                        minRotation: 0\n                    }\n                }],\n                yAxes: [{\n                    id: \"1\",\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }, {\n                    id: \"2\",\n                    display: false,\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }]\n            },\n            animation: {\n                duration: 0\n            }\n        }\n    }\n        \n/***** You shouldn't normally need to change anything below here *****/    \n    var myChart = null;\n    var loaded = false;     // indicates whether we have already had a load action\n    var chartTimeSpan;\n    var chartMaxPoints;\n\n    function doChart(msg, scope) {\n        if (!myChart) {\n            // chart does not exist so load the data and create it\n            var ctx = document.getElementById(chartID);\n            myChart = new Chart(ctx, chartDef);     \n        }\n        // chart already exists, update it\n        var datasets = myChart.data.datasets;\n        // is this a load or preload action?\n        if (msg.action === \"load\" || msg.action === \"preload\") {\n            // yes, do not allow preload if we have already had a load\n            // so do it if this is a load or we have not previously had a load\n            if (msg.action === \"load\" || !loaded) {\n                // pick up chartTimeSpan and chartMaxPoints if they have been provided\n                if (typeof msg.chartTimeSpan != 'undefined') {\n                    chartTimeSpan = msg.chartTimeSpan;\n                }\n                if (typeof msg.chartMaxPoints != 'undefined') {\n                    chartMaxPoints = msg.chartMaxPoints;\n                }\n                    \n                // replace existing data for matching topics\n                for (var j = 0; j < msg.payload.length; j++) {\n                    var topic = msg.payload[j].topic;\n                    // find it in the chart\n                    for (var i = 0; i < datasets.length; i++) {\n                        if (datasets[i].topic == topic) {\n                            // if stripping old samples by time is required then ensure the x value is Date\n                            if (chartTimeSpan > 0 ) {\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    if (typeof data[k].x === \"string\") {\n                                        data[k].x = new Date(data[k].x);\n                                    }\n                                }\n                            }\n                            if (chartDef.type !== \"bar\") {\n                                datasets[i].data = msg.payload[j].data;\n                            } else {\n                                // bar chart so x values must go to labels and y values to dataset\n                                datasets[i].data = [];\n                                myChart.data.labels = [];\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    datasets[i].data.push(data[k].y);\n                                    myChart.data.labels.push(data[k].x);\n                                }\n                            }\n                            break;\n                        }\n                    }\n                }\n            }\n            if (msg.action === \"load\") loaded = true;\n            myChart.update();\n        } else {\n            // does the topic match one of the datasets?\n            for (var i = 0; i < datasets.length; i++) {\n                if (datasets[i].topic == msg.topic) {\n                    // if stripping old samples by time is required then ensure the x value is Date\n                    if (chartTimeSpan > 0 && typeof msg.payload.x === \"string\") {\n                        msg.payload.x = new Date(msg.payload.x);\n                    }\n                    if (chartDef.type !== \"bar\") {\n                        datasets[i].data.push(msg.payload);\n                    } else {\n                         // bar chart so x value must go to labels and y value to dataset\n                        datasets[i].data.push(msg.payload.y);\n                        myChart.data.labels.push(msg.payload.x);\n                    }\n                    myChart.update();\n                    break;\n                }\n            }\n        }\n        // strip off samples older than now\n        // charTimeSpan == 0 implies don't do it\n        var shifted = false;\n        if (chartTimeSpan > 0) {\n            var now = new Date();\n            var oldestTimeAllowed = now - chartTimeSpan;\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data[0] && getTime(dataset.data[0].x) < oldestTimeAllowed) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        // strip samples off the front if there are now too many\n        // charTimeSpan == 0 implies don't do it\n        if (chartMaxPoints > 0) {\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data.length > chartMaxPoints) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        if (shifted) {\n            myChart.update();\n        }\n        \n        var maxValue = getMax(myChart);\n        myChart.options.scales.yAxes[0].ticks.max = maxValue + 10;\n        myChart.options.scales.yAxes[1].ticks.max = maxValue + 10;\n        \n        var minValue = getMin(myChart);\n        myChart.options.scales.yAxes[0].ticks.min = minValue - 10;\n        myChart.options.scales.yAxes[1].ticks.min = minValue - 10;\n    };\n\n    var getMax = function(chart) {\n        datasets = chart.data.datasets;\n        var maxValue = 0;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y > maxValue) {\n                    maxValue = d.y\n                }\n            })\n        }\n        return parseInt(maxValue);\n    }\n\n    var getMin = function(chart) {\n        datasets = chart.data.datasets;\n        var minValue = 1000;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y < minValue) {\n                    minValue = d.y\n                }\n            })\n        }\n        return parseInt(minValue);\n    }\n\n    // gets the time of an x value, works for strings or Date types\n    function getTime(x) {\n        if (typeof x === \"string\") x = new Date(x);\n        return x.getTime();\n    }\n    \n    // builds the preload message for sending back to the chart helper\n    function preloadMsg() {\n        var preMsg = {action: \"preload\", payload: \"preload\"};\n        // build array of topics in chart\n        var topics = [];\n        for (var i=0; i<chartDef.data.datasets.length; i++) {\n            topics.push(chartDef.data.datasets[i].topic);\n        }\n        preMsg.topics = topics;\n        // has the chart already been created\n        if (myChart) {\n            preMsg.lastXValue = 1;\n        } else {\n            preMsg.lastXValue = 0;\n        }\n        return preMsg;\n    }\n\n    (function(scope) {\n        // this code gets run when the a view is opened on the node in the browser\n        // send a preload message back to node red to ask it send\n        // us a complete set of data. Pass down max points and time span to the helper node for it to use\n        // plus an array of the topics of interest\n        scope.send( preloadMsg() );\n        \n        scope.$watch('msg', function(msg) {\n            if (msg) {\n                doChart(msg, scope);\n            }\n        });\n    })(scope);\n})();\n</script>\n",
-        "storeOutMessages": false,
-        "fwdInMessages": false,
-        "resendOnRefresh": false,
-        "templateScope": "local",
-        "x": 620,
-        "y": 440,
-        "wires": [
-            [
-                "b2783e22.2b8f"
-            ]
-        ]
-    },
-    {
-        "id": "b2783e22.2b8f",
-        "type": "function",
-        "z": "e3c08c05.3866c",
-        "name": "BKChart Helper",
-        "func": "// A helper for the node-red chart.js template node\n// see the template node for the majority of the user defined data\n// here all that is needed is to setup values to limit the length of the chart\n// Firstly chartMaxPoints may be set non-zero and (for each channel) when the number\n// of points exceeds this value then the oldest samples will be discarded.\n// Alternatively (or in addition) if the x axis is time based then chartTimeSpan (milliseconds)\n// may be set and then old samples will be discarded to limit the chart to this time span.\n\nvar chartMaxPoints = 0;             //max no points in a chart before they drop off the left. Set to zero to disable\nvar chartTimeSpan = 60*60*1000;     //chart time span 4 mins. Set to zero to disable\n\n// ----------------------------------------------------------\n// You should not need to change anything below here\n\n// with inputs connected to the same nodes as a chart.js node this maintains a chart history\n// for preloading into the chart when it is opened in the browser\n\nvar topicsOfinterest = context.get('topicsOfInterest');    // can't use null here\nif (typeof topicsOfInterest == 'undefined') topicsOfInterest = null;\n\nvar msg2 = null;\nvar datasets = context.get('datasets') || [];\n// each dataset maps to a channel on the chart and consists of a hash with fields\n// topic: the topic name of the channel\n// data: an array of data points {x: x_value, y: y_value}\n// If msg.action == \"preload\" then the topic and payload are ignored and a message is passed\n// on containing the current chart data and msg.action still set to preload\n\nif (msg.action === \"preload\") {\n    // we should have been passed the topics of interest\n    topicsOfInterest = msg.topics;      // null if not provided\n    context.set('topicsOfInterest', topicsOfInterest);\n    // send a message containing the current chart data time range values, leave rest of msg as is\n    msg.payload = datasets;\n    msg.chartMaxPoints = chartMaxPoints;\n    msg.chartTimeSpan = chartTimeSpan;\n} else if (msg.action === \"restore\") {\n    // restoring from persistent memory\n    // step through the given datasets, if any\n    if (Array.isArray(msg.payload)) {\n        for (var i = 0; i < msg.payload.length; i++) {\n            topic = msg.payload[i].topic;\n            // find the matching topic\n            var found = false;\n            for (var k = 0; k < datasets.length; k++) {\n                if (datasets[k].topic == topic) {\n                    // insert the data in front of any that has been acquired since startup\n                    datasets[k].data = msg.payload[i].data.concat(datasets[k].data);\n                    found = true;\n                    break;\n                }\n            }\n            if (!found) {\n                // new topic so make a new dataset and fill it\n                datasets.push({topic: topic, data: msg.payload[i].data});\n            }\n        }\n    }\n    // remember that we have restored in order to enable future writes to persistent store\n    context.set(\"restored\", true);\n    // send a preload action to the chart\n    msg.action = \"preload\";\n    msg.payload = datasets;\n} else if (msg.action === \"load\") {\n    // replace existing data for matching topics\n    for (var j = 0; j < msg.payload.length; j++) {\n        var topic = msg.payload[j].topic;\n        // find it in the chart\n        found = false;\n        for (i = 0; i < datasets.length; i++) {\n            if (datasets[i].topic == topic) {\n                datasets[i].data = msg.payload[j].data;\n                found = true;\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset and fill it\n            datasets.push({topic: topic, data: msg.payload[j].data});\n        }\n    }\n    msg = null;         // don't send anything on\n} else {\n    // check whether the topic is one we are interested in\n    if (topicsOfInterest === null  || topicsOfInterest.indexOf(msg.topic) >= 0) {\n        found = false;\n        // find the right dataset if it already exists\n        for (i = 0; i < datasets.length; i++) {\n            dataset = datasets[i];\n            if (dataset.topic == msg.topic) {\n                found = true;\n                dataset.data.push(msg.payload);\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset\n            datasets.push({topic: msg.topic, data: [msg.payload]});\n        }\n    } else {\n        // ignore topics that are not of interest\n    }\n    // do not pass on a message to o/p 1, send the datasets to o/p 2 for persistent\n    // storage if required and we have been given data on startup\n    // this is to prevent the persistent store being overwritten before it has been read\n    msg = null;\n    if (context.get(\"restored\")) {\n        msg2 = {payload: datasets};\n    }\n}\n    \n// remove any points that are too old\nif (chartTimeSpan > 0) {\n    var now = new Date();\n    var oldestTimeAllowed = new Date();\n    oldestTimeAllowed.setTime(now.getTime() - (chartTimeSpan));\n    for (i = 0; i < datasets.length; i++) {\n        var data = datasets[i].data;\n        while (data.length > 0 ) {\n            // convert the x value (in place) to a Date if it is a string\n            if (typeof data[0].x === \"string\") {\n                data[0].x = new Date(data[0].x);\n            }            \n            if (data[0].x < oldestTimeAllowed) {\n                data.shift();\n            } else {\n                break;\n            }\n        }\n    }\n}\n// strip samples off the front if there are now too many\n// charTimeSpan == 0 implies don't do it\nif (chartMaxPoints > 0) {\n    var shifted = false;\n    for (i = 0; i < datasets.length; i++) {\n        data = datasets[i].data;\n        while(data.length > chartMaxPoints) {\n            data.shift();\n        }\n    }\n}\ncontext.set('datasets', datasets);\nreturn [msg,msg2];\n\n",
-        "outputs": "2",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 520,
-        "wires": [
-            [
-                "c9472002.7fc0f"
-            ],
             []
         ]
     },
@@ -801,7 +460,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 760,
+        "x": 280,
         "y": 380,
         "wires": [
             [
@@ -820,7 +479,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "x": 600,
+        "x": 120,
         "y": 380,
         "wires": [
             [
@@ -836,7 +495,7 @@
         "links": [
             "800fdbd5.b33ce8"
         ],
-        "x": 815,
+        "x": 335,
         "y": 340,
         "wires": [
             [
@@ -853,7 +512,7 @@
         "label": "Target",
         "tooltip": "",
         "group": "10788b43.59cf15",
-        "order": 5,
+        "order": 6,
         "width": 5,
         "height": 1,
         "wrap": false,
@@ -864,7 +523,7 @@
         "min": 0,
         "max": "100",
         "step": "0.1",
-        "x": 910,
+        "x": 430,
         "y": 380,
         "wires": [
             [
@@ -891,7 +550,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1100,
+        "x": 620,
         "y": 340,
         "wires": [
             []
@@ -909,7 +568,7 @@
         "label": "Ferment Name",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 840,
+        "x": 360,
         "y": 80,
         "wires": []
     },
@@ -1029,7 +688,7 @@
             "e830e407.bbad68",
             "72b0d5f93c9f45ab"
         ],
-        "x": 975,
+        "x": 495,
         "y": 440,
         "wires": []
     },
@@ -1054,7 +713,7 @@
         "type": "brewers-chronicle-post",
         "z": "88b059e6.3f9688",
         "name": "BC Post => target",
-        "readingtype": "6",
+        "readingtype": "3",
         "readingvalue": "#:(storeInFile)::targetTemp",
         "readingvaluetype": "global",
         "x": 650,
@@ -1265,8 +924,8 @@
         "props": [],
         "repeat": "900",
         "crontab": "",
-        "once": false,
-        "onceDelay": "0.1",
+        "once": true,
+        "onceDelay": "15",
         "topic": "",
         "x": 110,
         "y": 100,
@@ -1281,7 +940,7 @@
         "type": "brewers-chronicle-post",
         "z": "88b059e6.3f9688",
         "name": "BC Post => temp",
-        "readingtype": "7",
+        "readingtype": "4",
         "readingvalue": "temp",
         "readingvaluetype": "global",
         "x": 610,
@@ -1326,7 +985,7 @@
         "z": "e3c08c05.3866c",
         "name": "Sync to BC",
         "group": "10788b43.59cf15",
-        "order": 6,
+        "order": 7,
         "width": "1",
         "height": "1",
         "passthru": false,
@@ -1339,7 +998,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 850,
+        "x": 370,
         "y": 440,
         "wires": [
             [
@@ -1432,7 +1091,7 @@
         "links": [
             "3eb30ec7.923ee2"
         ],
-        "x": 675,
+        "x": 195,
         "y": 120,
         "wires": [
             [
@@ -1616,80 +1275,6 @@
         ]
     },
     {
-        "id": "bf111c948cb6c34b",
-        "type": "switch",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "property": "#:(storeInFile)::temp_sensorid",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "nnull"
-            },
-            {
-                "t": "else"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 430,
-        "y": 280,
-        "wires": [
-            [
-                "dc0594a8.4d8ae8"
-            ],
-            [
-                "996e10c7b3a3b616"
-            ]
-        ]
-    },
-    {
-        "id": "0d412ba633122c16",
-        "type": "ui_toast",
-        "z": "e3c08c05.3866c",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "sendall": true,
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "raw": false,
-        "topic": "",
-        "name": "",
-        "x": 770,
-        "y": 300,
-        "wires": []
-    },
-    {
-        "id": "996e10c7b3a3b616",
-        "type": "change",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "Please select a sensor id from settings area",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 580,
-        "y": 300,
-        "wires": [
-            [
-                "0d412ba633122c16"
-            ]
-        ]
-    },
-    {
         "id": "01a338fa6cddc570",
         "type": "switch",
         "z": "88b059e6.3f9688",
@@ -1857,7 +1442,7 @@
         "links": [
             "a833829bff4b384a"
         ],
-        "x": 1435,
+        "x": 955,
         "y": 240,
         "wires": []
     },
@@ -1897,7 +1482,7 @@
         "checkall": "true",
         "repair": false,
         "outputs": 2,
-        "x": 1330,
+        "x": 850,
         "y": 260,
         "wires": [
             [
@@ -2411,7 +1996,7 @@
         "id": "58651360b48ee3e0",
         "type": "ui_led",
         "z": "b551692c56bb1559",
-        "order": 3,
+        "order": 4,
         "group": "10788b43.59cf15",
         "width": "1",
         "height": "1",
@@ -3123,33 +2708,6 @@
         ]
     },
     {
-        "id": "daa56f3eb3fd90d8",
-        "type": "ui_numeric",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "label": "debug temp value",
-        "tooltip": "",
-        "group": "30c770218c75263c",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "wrap": false,
-        "passthru": true,
-        "topic": "topic",
-        "topicType": "msg",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "30",
-        "step": "0.1",
-        "x": 510,
-        "y": 220,
-        "wires": [
-            [
-                "c94ab7ea.550f58"
-            ]
-        ]
-    },
-    {
         "id": "931b7b93c2241080",
         "type": "delay",
         "z": "b551692c56bb1559",
@@ -3189,7 +2747,7 @@
         "onceDelay": 0.1,
         "topic": "",
         "payloadType": "str",
-        "x": 650,
+        "x": 170,
         "y": 80,
         "wires": [
             [
@@ -3216,7 +2774,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 200,
+        "x": 260,
         "y": 260,
         "wires": [
             [
@@ -3428,183 +2986,6 @@
         ]
     },
     {
-        "id": "a70035495f41e4a9",
-        "type": "switch",
-        "z": "e3c08c05.3866c",
-        "name": "debug temp?",
-        "property": "debugTemp",
-        "propertyType": "global",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "true",
-        "repair": false,
-        "outputs": 2,
-        "x": 290,
-        "y": 240,
-        "wires": [
-            [
-                "daa56f3eb3fd90d8",
-                "49147e81ea91bb1b"
-            ],
-            [
-                "bf111c948cb6c34b",
-                "49147e81ea91bb1b"
-            ]
-        ]
-    },
-    {
-        "id": "49147e81ea91bb1b",
-        "type": "debug",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 420,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "3283a2a13bf198f4",
-        "type": "ui_switch",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "label": "GPIO 33",
-        "tooltip": "",
-        "group": "30c770218c75263c",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "0",
-        "onvalueType": "num",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "1",
-        "offvalueType": "num",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "x": 380,
-        "y": 640,
-        "wires": [
-            [
-                "51bc0fafea8c448c"
-            ]
-        ]
-    },
-    {
-        "id": "548a81011e1c71a6",
-        "type": "inject",
-        "z": "e3c08c05.3866c",
-        "name": "init pins",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "1",
-        "payloadType": "num",
-        "x": 220,
-        "y": 640,
-        "wires": [
-            [
-                "3283a2a13bf198f4"
-            ]
-        ]
-    },
-    {
-        "id": "51bc0fafea8c448c",
-        "type": "rpi-gpio out",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "pin": "33",
-        "set": "",
-        "level": "0",
-        "freq": "",
-        "out": "out",
-        "x": 540,
-        "y": 640,
-        "wires": []
-    },
-    {
-        "id": "61c042f36439b5bf",
-        "type": "ui_switch",
-        "z": "e3c08c05.3866c",
-        "name": "",
-        "label": "debug temp?",
-        "tooltip": "",
-        "group": "30c770218c75263c",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "x": 230,
-        "y": 680,
-        "wires": [
-            [
-                "3c2942615b849280"
-            ]
-        ]
-    },
-    {
-        "id": "3c2942615b849280",
-        "type": "change",
-        "z": "e3c08c05.3866c",
-        "name": "set debugTemp",
-        "rules": [
-            {
-                "t": "set",
-                "p": "debugTemp",
-                "pt": "global",
-                "to": "payload",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 450,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "fb31a0a0809405b7",
         "type": "ui_ui_control",
         "z": "99864f155e07e4a2",
@@ -3622,7 +3003,7 @@
         "z": "99864f155e07e4a2",
         "name": "Settings",
         "group": "10788b43.59cf15",
-        "order": 8,
+        "order": 9,
         "width": "1",
         "height": 1,
         "passthru": false,
@@ -3668,6 +3049,1320 @@
             [
                 "fb31a0a0809405b7"
             ]
+        ]
+    },
+    {
+        "id": "93aece69baf33a36",
+        "type": "ui_dropdown",
+        "z": "de95195cf8e6da5e",
+        "name": "Tilt select",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "9f08e52c83e7ab7b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "options": [
+            {
+                "label": "None",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "Red",
+                "value": "Red",
+                "type": "str"
+            },
+            {
+                "label": "Green",
+                "value": "Green",
+                "type": "str"
+            },
+            {
+                "label": "Black",
+                "value": "Black",
+                "type": "str"
+            },
+            {
+                "label": "Purple",
+                "value": "Purple",
+                "type": "str"
+            },
+            {
+                "label": "Orange",
+                "value": "Orange",
+                "type": "str"
+            },
+            {
+                "label": "Blue",
+                "value": "Blue",
+                "type": "str"
+            },
+            {
+                "label": "Yellow",
+                "value": "Yellow",
+                "type": "str"
+            },
+            {
+                "label": "Pink",
+                "value": "Pink",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 520,
+        "y": 140,
+        "wires": [
+            [
+                "c10e313726c53a29"
+            ]
+        ]
+    },
+    {
+        "id": "9fbfe24c5600e57f",
+        "type": "inject",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "b9b68522fc8f4a9a"
+            ]
+        ]
+    },
+    {
+        "id": "b9b68522fc8f4a9a",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::tiltColour",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 140,
+        "wires": [
+            [
+                "93aece69baf33a36"
+            ]
+        ]
+    },
+    {
+        "id": "7529a201e62ce991",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::tiltColour",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 160,
+        "wires": [
+            [
+                "0a310fa374ba5b8a"
+            ]
+        ]
+    },
+    {
+        "id": "04263517585df15c",
+        "type": "inject",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "props": [],
+        "repeat": "900",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 600,
+        "wires": [
+            [
+                "e9148678a8d53757"
+            ]
+        ]
+    },
+    {
+        "id": "e9148678a8d53757",
+        "type": "switch",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "property": "#:(storeInFile)::tiltColour",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "dce583e9d22d5807"
+            ]
+        ]
+    },
+    {
+        "id": "760bebca81bf5ea4",
+        "type": "exec",
+        "z": "de95195cf8e6da5e",
+        "command": "sudo python3 -m aioblescan --singleLoop 1 --tilt ",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "f9542aed53835488",
+                "4435295ec931432e"
+            ],
+            [
+                "f9542aed53835488"
+            ],
+            [
+                "f9542aed53835488"
+            ]
+        ]
+    },
+    {
+        "id": "f9542aed53835488",
+        "type": "link out",
+        "z": "de95195cf8e6da5e",
+        "name": "Tilt - Info out",
+        "links": [],
+        "x": 795,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "92fc84132d1b1e87",
+        "type": "ui_switch",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "GPIO 33",
+        "tooltip": "",
+        "group": "30c770218c75263c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "0",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "1",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 360,
+        "y": 880,
+        "wires": [
+            [
+                "6c05670f1fd3c255"
+            ]
+        ]
+    },
+    {
+        "id": "8b91ce61adae484f",
+        "type": "inject",
+        "z": "432a76d2.855fe8",
+        "name": "init pins",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 200,
+        "y": 880,
+        "wires": [
+            [
+                "92fc84132d1b1e87"
+            ]
+        ]
+    },
+    {
+        "id": "6c05670f1fd3c255",
+        "type": "rpi-gpio out",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "pin": "33",
+        "set": "",
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 520,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "2cbb9493f1949af8",
+        "type": "ui_switch",
+        "z": "432a76d2.855fe8",
+        "name": "",
+        "label": "debug temp?",
+        "tooltip": "",
+        "group": "30c770218c75263c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 610,
+        "y": 840,
+        "wires": [
+            [
+                "18c002870523c394"
+            ]
+        ]
+    },
+    {
+        "id": "18c002870523c394",
+        "type": "change",
+        "z": "432a76d2.855fe8",
+        "name": "set useDebugTemp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::useDebugTemp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dce583e9d22d5807",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "#:(storeInFile)::tiltColour",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 280,
+        "y": 500,
+        "wires": [
+            [
+                "760bebca81bf5ea4"
+            ]
+        ]
+    },
+    {
+        "id": "634632231e4ea0f5",
+        "type": "ui_text",
+        "z": "de95195cf8e6da5e",
+        "group": "10788b43.59cf15",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Gravity",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1540,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4435295ec931432e",
+        "type": "json",
+        "z": "de95195cf8e6da5e",
+        "name": "Tilt JSON",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 900,
+        "y": 400,
+        "wires": [
+            [
+                "272bf6d06fdb538b",
+                "e7dbbb965bf87620"
+            ]
+        ]
+    },
+    {
+        "id": "c10e313726c53a29",
+        "type": "switch",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "None",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 690,
+        "y": 140,
+        "wires": [
+            [
+                "a4239990be77311e"
+            ],
+            [
+                "7529a201e62ce991"
+            ]
+        ]
+    },
+    {
+        "id": "a4239990be77311e",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "#:(storeInFile)::tiltColour",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 900,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d986fca6fbd84728",
+        "type": "ui_switch",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "label": "Use Tilt temp",
+        "tooltip": "",
+        "group": "9f08e52c83e7ab7b",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 610,
+        "y": 220,
+        "wires": [
+            [
+                "b009c52d28dc5e49"
+            ]
+        ]
+    },
+    {
+        "id": "c0b65d0dad5836f4",
+        "type": "inject",
+        "z": "de95195cf8e6da5e",
+        "name": "get tiltGravityCalibration",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(storeInFile)::tiltGravityCalibration",
+        "payloadType": "global",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "4f98b1486a424bc1"
+            ]
+        ]
+    },
+    {
+        "id": "50b57ef762c9e73e",
+        "type": "ui_numeric",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "label": "Gravity Calibration",
+        "tooltip": "",
+        "group": "9f08e52c83e7ab7b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "10",
+        "step": "0.1",
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "3a92a58e1de45f9e"
+            ]
+        ]
+    },
+    {
+        "id": "3a92a58e1de45f9e",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::tiltGravityCalibration",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 830,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "272bf6d06fdb538b",
+        "type": "function",
+        "z": "de95195cf8e6da5e",
+        "name": "Process Tilt Gravity",
+        "func": "\nvar rawTiltGravity = msg.payload.gravity;\nvar calibration = parseInt(global.get('tiltGravityCalibration', 'storeInFile')) || 0;\nvar adjustedGravity = parseInt(parseInt(rawTiltGravity) + parseInt(calibration));\nvar logMsg = '';\n\nmsg.payload = adjustedGravity;\n\nif (calibration != 0) {\n    logMsg += 'rawTiltGravity: ' + rawTiltGravity + '; calibration: ' + calibration + '; ';\n}\n\nlogMsg += 'tiltGravity: ' + adjustedGravity;\n\nnode.log(logMsg);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 360,
+        "wires": [
+            [
+                "efe406db3816ddd4"
+            ]
+        ]
+    },
+    {
+        "id": "4f98b1486a424bc1",
+        "type": "function",
+        "z": "de95195cf8e6da5e",
+        "name": "Process Tilt Gravity",
+        "func": "\nvar calibration = parseInt(global.get('tiltGravityCalibration', 'storeInFile')) || 0;\nmsg.payload = calibration;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 280,
+        "wires": [
+            [
+                "50b57ef762c9e73e"
+            ]
+        ]
+    },
+    {
+        "id": "33eae9aaf305e799",
+        "type": "inject",
+        "z": "de95195cf8e6da5e",
+        "name": "get tiltTempCalibration",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(storeInFile)::tiltTempCalibration",
+        "payloadType": "global",
+        "x": 160,
+        "y": 340,
+        "wires": [
+            [
+                "6935d51c701ad4ab"
+            ]
+        ]
+    },
+    {
+        "id": "6935d51c701ad4ab",
+        "type": "function",
+        "z": "de95195cf8e6da5e",
+        "name": "Process Tilt Temp",
+        "func": "\nvar calibration = parseInt(global.get('tiltTempCalibration', 'storeInFile')) || 0;\nmsg.payload = calibration;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 340,
+        "wires": [
+            [
+                "3f562ac04f79934e"
+            ]
+        ]
+    },
+    {
+        "id": "3f562ac04f79934e",
+        "type": "ui_numeric",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "label": "Temp Calibration",
+        "tooltip": "",
+        "group": "9f08e52c83e7ab7b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": "-10",
+        "max": "10",
+        "step": "0.1",
+        "x": 590,
+        "y": 340,
+        "wires": [
+            [
+                "b5eb9fb24ee6011c"
+            ]
+        ]
+    },
+    {
+        "id": "b5eb9fb24ee6011c",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::tiltTempCalibration",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 820,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7cb720812648b08b",
+        "type": "link in",
+        "z": "de95195cf8e6da5e",
+        "name": "Trigger Tilt scan",
+        "links": [
+            "0a310fa374ba5b8a",
+            "195c699659c51721"
+        ],
+        "x": 135,
+        "y": 480,
+        "wires": [
+            [
+                "dce583e9d22d5807"
+            ]
+        ]
+    },
+    {
+        "id": "0a310fa374ba5b8a",
+        "type": "link out",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "links": [
+            "7cb720812648b08b"
+        ],
+        "x": 1015,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "e7dbbb965bf87620",
+        "type": "function",
+        "z": "de95195cf8e6da5e",
+        "name": "Process Tilt Temp",
+        "func": "\nvar rawTiltTemp = msg.payload.tempC;\nvar calibration = parseFloat(global.get('tiltTempCalibration', 'storeInFile')).toFixed(1) || 0.0;\nvar adjustedTemp = parseFloat(parseFloat(rawTiltTemp) + parseFloat(calibration)).toFixed(1);\nvar logMsg = '';\n\nmsg.payload = adjustedTemp;\n\nif (calibration != 0) {\n    logMsg += 'rawTiltTemp: ' + rawTiltTemp + '; calibration: ' + calibration + '; ';\n}\n\nlogMsg += 'tiltTemp: ' + adjustedTemp;\n\nnode.log(logMsg);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 400,
+        "wires": [
+            [
+                "a471c824bed666de"
+            ]
+        ]
+    },
+    {
+        "id": "b420acbbad984bf9",
+        "type": "ui_button",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "group": "9f08e52c83e7ab7b",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Get Tilt info",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 350,
+        "y": 380,
+        "wires": [
+            [
+                "195c699659c51721"
+            ]
+        ]
+    },
+    {
+        "id": "195c699659c51721",
+        "type": "link out",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "links": [
+            "7cb720812648b08b"
+        ],
+        "x": 455,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "3f1e21b5dc6eed53",
+        "type": "link in",
+        "z": "e3c08c05.3866c",
+        "name": "Inject temp",
+        "links": [
+            "83cd3c85d49d566a",
+            "c1e099109490f440",
+            "662bfe0c221198bc",
+            "242463db373b2128",
+            "5a1bec7514d61035"
+        ],
+        "x": 275,
+        "y": 240,
+        "wires": [
+            [
+                "c94ab7ea.550f58"
+            ]
+        ]
+    },
+    {
+        "id": "c5f5c69ff5ea5472",
+        "type": "function",
+        "z": "a93928119aec5e99",
+        "name": "Send values to chart",
+        "func": "\nvar entryDate = new Date();\n\nvar temp_msg = {};\ntemp_msg.topic = \"Temp\";\ntemp_msg.payload = {x: entryDate, y: parseFloat(global.get(\"temp\")).toFixed(1)};\n\nvar target_msg = {};\ntarget_msg.topic = \"Target\";\ntarget_msg.payload = {x: entryDate, y: global.get(\"targetTemp\", \"storeInFile\")};\n\nnode.log(\"setting chart values\");\n\nreturn [[target_msg, temp_msg]];",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 440,
+        "wires": [
+            [
+                "d57fd1d33d128f0b",
+                "6110e42d997347d1"
+            ],
+            [
+                "d57fd1d33d128f0b",
+                "6110e42d997347d1"
+            ]
+        ]
+    },
+    {
+        "id": "d57fd1d33d128f0b",
+        "type": "ui_template",
+        "z": "a93928119aec5e99",
+        "group": "10788b43.59cf15",
+        "name": "chart.js",
+        "order": 8,
+        "width": 6,
+        "height": 4,
+        "format": "<!--\nA node-red Dashboard UI template to draw charts using chart.js\nBefore use download the file Chart.bundle.min.js from chartjs.org and \nsave in an appropriate folder (e.g. .node-red/static). \nIn settings.js set httpStatic to the full path of that folder and restart node-red.\nMake sure that the options for 'Pass through messages' and 'Add output messages' \nin this node are cleared.\nFor basic use set the id and size you want in the canvas tag and set chartID to the id\nSetup chartDef as required for your chart (see the chart.js docs)\nIn addition, for each dataset specify in chartDef the message topic that you will use for that channel.\nTo (optionally) provide the chart with a one-off set of data send the node a message with:\nmsg.action = \"load\"\nmsg.payload = [\n{topic: \"mytopic1\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n{topic: \"mytopic2\", data: [{x: x1,y:y2},{x:x2,y:y2},...]},\n...]\nWhere mytopic1 and mytopic2 are the the topics specified in the chartDef\n\nTo provide the chart with data incrementally (for a time series for example)\nsend it messages of the form\n{topic: \"mytopic1\", payload: {x:xvalue,y:yvalue}}\nThe chart will be updated as each sample is provided.\nTo limit the growth of the chart set chartMaxPoints and/or chartTimeSpan in the Chart Helper node\nas described at the head of that node.\nIf you find that chart seems to flicker and scroll bars come and go then try \nsetting a size other than auto in the Size specification for this node.\n\nFor Bar charts the x value is the label for the bar and the y value is the bar value\n\nNote that since the chart samples are stored in the browser then the chart will be cleared each\ntime the browser is refreshed (and will be clear on initially opening the view). In order to \nprovided persistency over browser opening and refresh this node may be used in conjunction with\nthe Chart Helper function node.  Details for its use are in the source of that node.\n\nIf your flow includes more that one instance of this script then the line fetching \nChart.bundle.min.js need only be included in one of them\n-->\n<script src=\"/Chart.bundle.min.js\"></script>\n<canvas id=\"BKChart\" width=\"300\" height=\"200\"></canvas>\n<script>\n(function() {\n    var chartID = \"BKChart\";           // set this to the id you have specified in the canvas tag above\n    // setup the chart definition as defined in the chart.js documentation, in addition setting up the topic\n    // for each channel\n    var chartDef = {\n        type: 'line',\n        data: {\n            datasets: [{\n                topic: \"Target\",    // used here not by chart.js\n                label: \"Target\",\n                yAxisID: \"1\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#ff0000\",\n                pointRadius: 0,\n                pointBorderColor: \"#ff0000\",\n                pointBackgroundColor: \"#ff0000\",\n                backgroundColor:  \"#ff0000\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }, {\n                topic: \"Temp\",    // used here not by chart.js\n                label: \"Temp\",\n                yAxisID: \"2\",\n                fill: false,\n                lineTension: 0,\n                borderColor: \"#0000ff\",\n                pointRadius: 0,\n                pointBorderColor: \"#0000ff\",\n                pointBackgroundColor: \"#0000ff\",\n                backgroundColor:  \"#0000ff\",\n                borderWidth: 1,\n                data: []  // data is written here later\n            }]\n        },\n        options: {\n            scales: {\n                xAxes: [{\n                    type: 'time',\n                    time: {\n                        unit: 'minute',\n                        unitStepSize: 1,\n                        displayFormats: {\n                            minute: 'HH:mm'\n                        }\n                    },\n                    ticks: {\n                        autoSkip: true,\n                        maxTicksLimit: 3,\n                        maxRotation: 0,\n                        minRotation: 0\n                    }\n                }],\n                yAxes: [{\n                    id: \"1\",\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }, {\n                    id: \"2\",\n                    display: false,\n                    ticks: {\n                        min: 0,\n                        max: 80,\n                        stepSize: 5\n                    }\n                }]\n            },\n            animation: {\n                duration: 0\n            }\n        }\n    }\n        \n/***** You shouldn't normally need to change anything below here *****/    \n    var myChart = null;\n    var loaded = false;     // indicates whether we have already had a load action\n    var chartTimeSpan;\n    var chartMaxPoints;\n\n    function doChart(msg, scope) {\n        if (!myChart) {\n            // chart does not exist so load the data and create it\n            var ctx = document.getElementById(chartID);\n            myChart = new Chart(ctx, chartDef);     \n        }\n        // chart already exists, update it\n        var datasets = myChart.data.datasets;\n        // is this a load or preload action?\n        if (msg.action === \"load\" || msg.action === \"preload\") {\n            // yes, do not allow preload if we have already had a load\n            // so do it if this is a load or we have not previously had a load\n            if (msg.action === \"load\" || !loaded) {\n                // pick up chartTimeSpan and chartMaxPoints if they have been provided\n                if (typeof msg.chartTimeSpan != 'undefined') {\n                    chartTimeSpan = msg.chartTimeSpan;\n                }\n                if (typeof msg.chartMaxPoints != 'undefined') {\n                    chartMaxPoints = msg.chartMaxPoints;\n                }\n                    \n                // replace existing data for matching topics\n                for (var j = 0; j < msg.payload.length; j++) {\n                    var topic = msg.payload[j].topic;\n                    // find it in the chart\n                    for (var i = 0; i < datasets.length; i++) {\n                        if (datasets[i].topic == topic) {\n                            // if stripping old samples by time is required then ensure the x value is Date\n                            if (chartTimeSpan > 0 ) {\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    if (typeof data[k].x === \"string\") {\n                                        data[k].x = new Date(data[k].x);\n                                    }\n                                }\n                            }\n                            if (chartDef.type !== \"bar\") {\n                                datasets[i].data = msg.payload[j].data;\n                            } else {\n                                // bar chart so x values must go to labels and y values to dataset\n                                datasets[i].data = [];\n                                myChart.data.labels = [];\n                                var data = msg.payload[j].data;\n                                for (var k = 0; k < data.length; k++) {\n                                    datasets[i].data.push(data[k].y);\n                                    myChart.data.labels.push(data[k].x);\n                                }\n                            }\n                            break;\n                        }\n                    }\n                }\n            }\n            if (msg.action === \"load\") loaded = true;\n            myChart.update();\n        } else {\n            // does the topic match one of the datasets?\n            for (var i = 0; i < datasets.length; i++) {\n                if (datasets[i].topic == msg.topic) {\n                    // if stripping old samples by time is required then ensure the x value is Date\n                    if (chartTimeSpan > 0 && typeof msg.payload.x === \"string\") {\n                        msg.payload.x = new Date(msg.payload.x);\n                    }\n                    if (chartDef.type !== \"bar\") {\n                        datasets[i].data.push(msg.payload);\n                    } else {\n                         // bar chart so x value must go to labels and y value to dataset\n                        datasets[i].data.push(msg.payload.y);\n                        myChart.data.labels.push(msg.payload.x);\n                    }\n                    myChart.update();\n                    break;\n                }\n            }\n        }\n        // strip off samples older than now\n        // charTimeSpan == 0 implies don't do it\n        var shifted = false;\n        if (chartTimeSpan > 0) {\n            var now = new Date();\n            var oldestTimeAllowed = now - chartTimeSpan;\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data[0] && getTime(dataset.data[0].x) < oldestTimeAllowed) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        // strip samples off the front if there are now too many\n        // charTimeSpan == 0 implies don't do it\n        if (chartMaxPoints > 0) {\n            for (var i = 0; i < datasets.length; i++) {\n                dataset = datasets[i];\n                while(dataset.data.length > chartMaxPoints) {\n                    dataset.data.shift();\n                    shifted = true;\n                }\n            }\n        }\n        if (shifted) {\n            myChart.update();\n        }\n        \n        var maxValue = getMax(myChart);\n        myChart.options.scales.yAxes[0].ticks.max = maxValue + 10;\n        myChart.options.scales.yAxes[1].ticks.max = maxValue + 10;\n        \n        var minValue = getMin(myChart);\n        myChart.options.scales.yAxes[0].ticks.min = minValue - 10;\n        myChart.options.scales.yAxes[1].ticks.min = minValue - 10;\n    };\n\n    var getMax = function(chart) {\n        datasets = chart.data.datasets;\n        var maxValue = 0;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y > maxValue) {\n                    maxValue = d.y\n                }\n            })\n        }\n        return parseInt(maxValue);\n    }\n\n    var getMin = function(chart) {\n        datasets = chart.data.datasets;\n        var minValue = 1000;\n        for(var i=0; i<datasets.length; i++) {\n            dataset=datasets[i]\n            if(chart.data.datasets[i].hidden) {\n                continue;\n            }\n            dataset.data.forEach(function(d) {\n                if(typeof(d.y)==\"number\" && d.y < minValue) {\n                    minValue = d.y\n                }\n            })\n        }\n        return parseInt(minValue);\n    }\n\n    // gets the time of an x value, works for strings or Date types\n    function getTime(x) {\n        if (typeof x === \"string\") x = new Date(x);\n        return x.getTime();\n    }\n    \n    // builds the preload message for sending back to the chart helper\n    function preloadMsg() {\n        var preMsg = {action: \"preload\", payload: \"preload\"};\n        // build array of topics in chart\n        var topics = [];\n        for (var i=0; i<chartDef.data.datasets.length; i++) {\n            topics.push(chartDef.data.datasets[i].topic);\n        }\n        preMsg.topics = topics;\n        // has the chart already been created\n        if (myChart) {\n            preMsg.lastXValue = 1;\n        } else {\n            preMsg.lastXValue = 0;\n        }\n        return preMsg;\n    }\n\n    (function(scope) {\n        // this code gets run when the a view is opened on the node in the browser\n        // send a preload message back to node red to ask it send\n        // us a complete set of data. Pass down max points and time span to the helper node for it to use\n        // plus an array of the topics of interest\n        scope.send( preloadMsg() );\n        \n        scope.$watch('msg', function(msg) {\n            if (msg) {\n                doChart(msg, scope);\n            }\n        });\n    })(scope);\n})();\n</script>\n",
+        "storeOutMessages": false,
+        "fwdInMessages": false,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "x": 740,
+        "y": 420,
+        "wires": [
+            [
+                "6110e42d997347d1"
+            ]
+        ]
+    },
+    {
+        "id": "6110e42d997347d1",
+        "type": "function",
+        "z": "a93928119aec5e99",
+        "name": "BKChart Helper",
+        "func": "// A helper for the node-red chart.js template node\n// see the template node for the majority of the user defined data\n// here all that is needed is to setup values to limit the length of the chart\n// Firstly chartMaxPoints may be set non-zero and (for each channel) when the number\n// of points exceeds this value then the oldest samples will be discarded.\n// Alternatively (or in addition) if the x axis is time based then chartTimeSpan (milliseconds)\n// may be set and then old samples will be discarded to limit the chart to this time span.\n\nvar chartMaxPoints = 0;             //max no points in a chart before they drop off the left. Set to zero to disable\nvar chartTimeSpan = 60*60*1000;     //chart time span 4 mins. Set to zero to disable\n\n// ----------------------------------------------------------\n// You should not need to change anything below here\n\n// with inputs connected to the same nodes as a chart.js node this maintains a chart history\n// for preloading into the chart when it is opened in the browser\n\nvar topicsOfinterest = context.get('topicsOfInterest');    // can't use null here\nif (typeof topicsOfInterest == 'undefined') topicsOfInterest = null;\n\nvar msg2 = null;\nvar datasets = context.get('datasets') || [];\n// each dataset maps to a channel on the chart and consists of a hash with fields\n// topic: the topic name of the channel\n// data: an array of data points {x: x_value, y: y_value}\n// If msg.action == \"preload\" then the topic and payload are ignored and a message is passed\n// on containing the current chart data and msg.action still set to preload\n\nif (msg.action === \"preload\") {\n    // we should have been passed the topics of interest\n    topicsOfInterest = msg.topics;      // null if not provided\n    context.set('topicsOfInterest', topicsOfInterest);\n    // send a message containing the current chart data time range values, leave rest of msg as is\n    msg.payload = datasets;\n    msg.chartMaxPoints = chartMaxPoints;\n    msg.chartTimeSpan = chartTimeSpan;\n} else if (msg.action === \"restore\") {\n    // restoring from persistent memory\n    // step through the given datasets, if any\n    if (Array.isArray(msg.payload)) {\n        for (var i = 0; i < msg.payload.length; i++) {\n            topic = msg.payload[i].topic;\n            // find the matching topic\n            var found = false;\n            for (var k = 0; k < datasets.length; k++) {\n                if (datasets[k].topic == topic) {\n                    // insert the data in front of any that has been acquired since startup\n                    datasets[k].data = msg.payload[i].data.concat(datasets[k].data);\n                    found = true;\n                    break;\n                }\n            }\n            if (!found) {\n                // new topic so make a new dataset and fill it\n                datasets.push({topic: topic, data: msg.payload[i].data});\n            }\n        }\n    }\n    // remember that we have restored in order to enable future writes to persistent store\n    context.set(\"restored\", true);\n    // send a preload action to the chart\n    msg.action = \"preload\";\n    msg.payload = datasets;\n} else if (msg.action === \"load\") {\n    // replace existing data for matching topics\n    for (var j = 0; j < msg.payload.length; j++) {\n        var topic = msg.payload[j].topic;\n        // find it in the chart\n        found = false;\n        for (i = 0; i < datasets.length; i++) {\n            if (datasets[i].topic == topic) {\n                datasets[i].data = msg.payload[j].data;\n                found = true;\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset and fill it\n            datasets.push({topic: topic, data: msg.payload[j].data});\n        }\n    }\n    msg = null;         // don't send anything on\n} else {\n    // check whether the topic is one we are interested in\n    if (topicsOfInterest === null  || topicsOfInterest.indexOf(msg.topic) >= 0) {\n        found = false;\n        // find the right dataset if it already exists\n        for (i = 0; i < datasets.length; i++) {\n            dataset = datasets[i];\n            if (dataset.topic == msg.topic) {\n                found = true;\n                dataset.data.push(msg.payload);\n                break;\n            }\n        }\n        if (!found) {\n            // new topic so make a new dataset\n            datasets.push({topic: msg.topic, data: [msg.payload]});\n        }\n    } else {\n        // ignore topics that are not of interest\n    }\n    // do not pass on a message to o/p 1, send the datasets to o/p 2 for persistent\n    // storage if required and we have been given data on startup\n    // this is to prevent the persistent store being overwritten before it has been read\n    msg = null;\n    if (context.get(\"restored\")) {\n        msg2 = {payload: datasets};\n    }\n}\n    \n// remove any points that are too old\nif (chartTimeSpan > 0) {\n    var now = new Date();\n    var oldestTimeAllowed = new Date();\n    oldestTimeAllowed.setTime(now.getTime() - (chartTimeSpan));\n    for (i = 0; i < datasets.length; i++) {\n        var data = datasets[i].data;\n        while (data.length > 0 ) {\n            // convert the x value (in place) to a Date if it is a string\n            if (typeof data[0].x === \"string\") {\n                data[0].x = new Date(data[0].x);\n            }            \n            if (data[0].x < oldestTimeAllowed) {\n                data.shift();\n            } else {\n                break;\n            }\n        }\n    }\n}\n// strip samples off the front if there are now too many\n// charTimeSpan == 0 implies don't do it\nif (chartMaxPoints > 0) {\n    var shifted = false;\n    for (i = 0; i < datasets.length; i++) {\n        data = datasets[i].data;\n        while(data.length > chartMaxPoints) {\n            data.shift();\n        }\n    }\n}\ncontext.set('datasets', datasets);\nreturn [msg,msg2];\n\n",
+        "outputs": "2",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 500,
+        "wires": [
+            [
+                "d57fd1d33d128f0b"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "22740684bc1aa777",
+        "type": "link in",
+        "z": "a93928119aec5e99",
+        "name": "Inject chart values",
+        "links": [
+            "83cd3c85d49d566a",
+            "c1e099109490f440",
+            "662bfe0c221198bc",
+            "242463db373b2128",
+            "5a1bec7514d61035"
+        ],
+        "x": 315,
+        "y": 440,
+        "wires": [
+            [
+                "c5f5c69ff5ea5472"
+            ]
+        ]
+    },
+    {
+        "id": "d4124e4814a327b2",
+        "type": "sensor-dynamic-ds18b20",
+        "z": "a93928119aec5e99",
+        "name": "temp",
+        "topic": "",
+        "x": 810,
+        "y": 200,
+        "wires": [
+            [
+                "242463db373b2128"
+            ]
+        ]
+    },
+    {
+        "id": "afb01055629422c3",
+        "type": "function",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "func": "\nvar listArray = [];\n\nmsg.sensorid = global.get('temp_sensorid', 'storeInFile');\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 200,
+        "wires": [
+            [
+                "d4124e4814a327b2"
+            ]
+        ]
+    },
+    {
+        "id": "2c4b10e7a7273e6f",
+        "type": "inject",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "props": [],
+        "repeat": "15",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 200,
+        "wires": [
+            [
+                "c6bb49807f0be170"
+            ]
+        ]
+    },
+    {
+        "id": "f97fce7a9deeb87c",
+        "type": "switch",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "property": "#:(storeInFile)::temp_sensorid",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "nnull"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 450,
+        "y": 200,
+        "wires": [
+            [
+                "afb01055629422c3"
+            ],
+            [
+                "f3d7745c6026111f"
+            ]
+        ]
+    },
+    {
+        "id": "e3b68f34ea4caffc",
+        "type": "ui_toast",
+        "z": "a93928119aec5e99",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "",
+        "x": 850,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f3d7745c6026111f",
+        "type": "change",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Please select a sensor id from settings area",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "e3b68f34ea4caffc"
+            ]
+        ]
+    },
+    {
+        "id": "c6123af02bb43834",
+        "type": "ui_numeric",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "label": "debug temp value",
+        "tooltip": "",
+        "group": "30c770218c75263c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "30",
+        "step": "0.1",
+        "x": 490,
+        "y": 140,
+        "wires": [
+            [
+                "662bfe0c221198bc"
+            ]
+        ]
+    },
+    {
+        "id": "662bfe0c221198bc",
+        "type": "link out",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "links": [
+            "3f1e21b5dc6eed53",
+            "7f37909454e62b7f",
+            "14dca8bf22f80085",
+            "22740684bc1aa777"
+        ],
+        "x": 635,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "242463db373b2128",
+        "type": "link out",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "links": [
+            "3f1e21b5dc6eed53",
+            "7f37909454e62b7f",
+            "14dca8bf22f80085",
+            "22740684bc1aa777"
+        ],
+        "x": 915,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "efe406db3816ddd4",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tiltGravity",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 360,
+        "wires": [
+            [
+                "634632231e4ea0f5"
+            ]
+        ]
+    },
+    {
+        "id": "a471c824bed666de",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tiltTemp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1330,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15a112091cc739ca",
+        "type": "change",
+        "z": "a93928119aec5e99",
+        "name": "Pass Tilt temp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "tiltTemp",
+                "tot": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 510,
+        "y": 300,
+        "wires": [
+            [
+                "5a1bec7514d61035"
+            ]
+        ]
+    },
+    {
+        "id": "5a1bec7514d61035",
+        "type": "link out",
+        "z": "a93928119aec5e99",
+        "name": "",
+        "links": [
+            "3f1e21b5dc6eed53",
+            "7f37909454e62b7f",
+            "14dca8bf22f80085",
+            "22740684bc1aa777"
+        ],
+        "x": 655,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c6bb49807f0be170",
+        "type": "function",
+        "z": "a93928119aec5e99",
+        "name": "temp sensor mode",
+        "func": "\nnode.log(\"____________________________________\");\n\nvar useTiltTemp = global.get(\"useTiltTemp\", \"storeInFile\");\nvar useDebugTemp = global.get(\"useDebugTemp\", \"storeInFile\");\n\nif (useDebugTemp == true) {\n    node.log(\"useDebugTemp: \" + useDebugTemp);\n    return [msg, null, null];\n}\nelse if (useTiltTemp == true) {\n    node.log(\"useTiltTemp: \" + useTiltTemp);\n    return [null, null, msg];\n}\nelse {\n    node.log(\"use sensor\");\n    return [null, msg, null];\n}\n",
+        "outputs": 3,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "c6123af02bb43834"
+            ],
+            [
+                "f97fce7a9deeb87c"
+            ],
+            [
+                "15a112091cc739ca"
+            ]
+        ]
+    },
+    {
+        "id": "ad74063373c8df50",
+        "type": "inject",
+        "z": "432a76d2.855fe8",
+        "name": "get useDebugTemp",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "#:(storeInFile)::useDebugTemp",
+        "payloadType": "global",
+        "x": 150,
+        "y": 840,
+        "wires": [
+            [
+                "a4e4152a97d6b0ed"
+            ]
+        ]
+    },
+    {
+        "id": "a4e4152a97d6b0ed",
+        "type": "function",
+        "z": "432a76d2.855fe8",
+        "name": "Process Tilt Gravity",
+        "func": "\nvar useDebugTemp = (global.get('useDebugTemp', 'storeInFile')) || false;\nmsg.payload = useDebugTemp;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 840,
+        "wires": [
+            [
+                "2cbb9493f1949af8"
+            ]
+        ]
+    },
+    {
+        "id": "d33d81f15f62ae44",
+        "type": "inject",
+        "z": "de95195cf8e6da5e",
+        "name": "get useTiltTemp",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "73a63fac4495824c"
+            ]
+        ]
+    },
+    {
+        "id": "73a63fac4495824c",
+        "type": "function",
+        "z": "de95195cf8e6da5e",
+        "name": "load useTiltTemp",
+        "func": "\nvar useTiltTemp = global.get('useTiltTemp', 'storeInFile') || false;\nmsg.payload = useTiltTemp;\n\nnode.log(msg.payload)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 220,
+        "wires": [
+            [
+                "d986fca6fbd84728"
+            ]
+        ]
+    },
+    {
+        "id": "b009c52d28dc5e49",
+        "type": "change",
+        "z": "de95195cf8e6da5e",
+        "name": "set useTiltTemp",
+        "rules": [
+            {
+                "t": "set",
+                "p": "#:(storeInFile)::useTiltTemp",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 220,
+        "wires": [
+            []
         ]
     }
 ]
